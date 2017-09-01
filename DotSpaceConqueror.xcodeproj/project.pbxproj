@@ -22,7 +22,6 @@
 		602780221C19504A00242408 /* Motherlode_Kevin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6027801A1C19504A00242408 /* Motherlode_Kevin.mp3 */; };
 		602780231C19504A00242408 /* Triumph_Of_Clock_Master_Eric.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6027801B1C19504A00242408 /* Triumph_Of_Clock_Master_Eric.mp3 */; };
 		602780241C19504A00242408 /* What_is_Love_Kevin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6027801C1C19504A00242408 /* What_is_Love_Kevin.mp3 */; };
-		602780651C198D2900242408 /* SoundMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602780631C198D2900242408 /* SoundMenuTableViewCell.xib */; };
 		60F1CE181C130CB80054950A /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1CE171C130CB80054950A /* HelpView.swift */; };
 		60F1CE1A1C130CC40054950A /* HelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F1CE191C130CC40054950A /* HelpView.xib */; };
 		60FBFE6D1C12EE58002C84ED /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FBFE6C1C12EE58002C84ED /* SettingsView.xib */; };
@@ -34,6 +33,7 @@
 		C824128C1BD4C37800B788B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C824128A1BD4C37800B788B2 /* LaunchScreen.storyboard */; };
 		C82412971BD4C37800B788B2 /* DotSpaceConquerorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82412961BD4C37800B788B2 /* DotSpaceConquerorTests.swift */; };
 		C82412A21BD4C37800B788B2 /* DotSpaceConquerorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82412A11BD4C37800B788B2 /* DotSpaceConquerorUITests.swift */; };
+		C8293D4A1F5833620026097C /* SoundMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8293D491F5833620026097C /* SoundMenuTableViewCell.xib */; };
 		C835A6871C0C4F95007EC781 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C835A6861C0C4F95007EC781 /* Utilities.swift */; };
 		C835A6891C0D6791007EC781 /* FinalScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C835A6881C0D6791007EC781 /* FinalScoreView.xib */; };
 		C835A68B1C0D67A2007EC781 /* FinalScoreSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C835A68A1C0D67A2007EC781 /* FinalScoreSwift.swift */; };
@@ -87,7 +87,6 @@
 		6027801A1C19504A00242408 /* Motherlode_Kevin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Motherlode_Kevin.mp3; sourceTree = "<group>"; };
 		6027801B1C19504A00242408 /* Triumph_Of_Clock_Master_Eric.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Triumph_Of_Clock_Master_Eric.mp3; sourceTree = "<group>"; };
 		6027801C1C19504A00242408 /* What_is_Love_Kevin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = What_is_Love_Kevin.mp3; sourceTree = "<group>"; };
-		602780631C198D2900242408 /* SoundMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoundMenuTableViewCell.xib; sourceTree = "<group>"; };
 		60F1CE171C130CB80054950A /* HelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		60F1CE191C130CC40054950A /* HelpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpView.xib; sourceTree = "<group>"; };
 		60FBFE6C1C12EE58002C84ED /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		C824129D1BD4C37800B788B2 /* DotSpaceConquerorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotSpaceConquerorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82412A11BD4C37800B788B2 /* DotSpaceConquerorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSpaceConquerorUITests.swift; sourceTree = "<group>"; };
 		C82412A31BD4C37800B788B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8293D491F5833620026097C /* SoundMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoundMenuTableViewCell.xib; sourceTree = "<group>"; };
 		C835A6861C0C4F95007EC781 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C835A6881C0D6791007EC781 /* FinalScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinalScoreView.xib; sourceTree = "<group>"; };
 		C835A68A1C0D67A2007EC781 /* FinalScoreSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalScoreSwift.swift; sourceTree = "<group>"; };
@@ -265,10 +265,10 @@
 				60F1CE171C130CB80054950A /* HelpView.swift */,
 				602780101C19384700242408 /* SoundMenuView.xib */,
 				602780121C19385C00242408 /* SoundMenuView.swift */,
-				602780631C198D2900242408 /* SoundMenuTableViewCell.xib */,
 				C85686001C47A0CC00986D25 /* SoundMenuTableViewCell.swift */,
 				C871F0CB1C4D1008005FDB32 /* FinalScoreTableViewCell.xib */,
 				C871F0CA1C4D1008005FDB32 /* FinalScoreTableViewCell.swift */,
+				C8293D491F5833620026097C /* SoundMenuTableViewCell.xib */,
 			);
 			name = "Menu Views";
 			sourceTree = "<group>";
@@ -389,11 +389,13 @@
 					C82412911BD4C37800B788B2 = {
 						CreatedOnToolsVersion = 7.0;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						TestTargetID = C824127D1BD4C37800B788B2;
 					};
 					C824129C1BD4C37800B788B2 = {
 						CreatedOnToolsVersion = 7.0;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						TestTargetID = C824127D1BD4C37800B788B2;
 					};
 				};
@@ -424,7 +426,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C835A6891C0D6791007EC781 /* FinalScoreView.xib in Resources */,
-				602780651C198D2900242408 /* SoundMenuTableViewCell.xib in Resources */,
 				602780111C19384700242408 /* SoundMenuView.xib in Resources */,
 				60F1CE1A1C130CC40054950A /* HelpView.xib in Resources */,
 				602780211C19504A00242408 /* Macros_Theme_LoveShadow.mp3 in Resources */,
@@ -439,6 +440,7 @@
 				6018E4581C0B3FF200E31F13 /* ChooseDotsAndPlayers.xib in Resources */,
 				60FBFE6D1C12EE58002C84ED /* SettingsView.xib in Resources */,
 				6027801E1C19504A00242408 /* 80s_Space_Game_Loop_Eric.mp3 in Resources */,
+				C8293D4A1F5833620026097C /* SoundMenuTableViewCell.xib in Resources */,
 				602780221C19504A00242408 /* Motherlode_Kevin.mp3 in Resources */,
 				602780241C19504A00242408 /* What_is_Love_Kevin.mp3 in Resources */,
 				6027801F1C19504A00242408 /* Carosene_Cdk.mp3 in Resources */,
@@ -683,10 +685,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DotSpaceConquerorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cabot.DotSpaceConquerorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotSpaceConqueror.app/DotSpaceConqueror";
 			};
@@ -696,10 +701,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DotSpaceConquerorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cabot.DotSpaceConquerorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotSpaceConqueror.app/DotSpaceConqueror";
 			};
@@ -708,10 +716,13 @@
 		C82412AD1BD4C37800B788B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DotSpaceConquerorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cabot.DotSpaceConquerorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DotSpaceConqueror;
 				USES_XCTRUNNER = YES;
@@ -721,10 +732,13 @@
 		C82412AE1BD4C37800B788B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DotSpaceConquerorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cabot.DotSpaceConquerorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DotSpaceConqueror;
 				USES_XCTRUNNER = YES;
