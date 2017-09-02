@@ -16,12 +16,11 @@ This is the classic game of Dots and boxes where players take turns joining two 
 
 * Multiplayer different device can be connected through wifi or bluetooth
 
-## Screenshot
 
 ![Alt][screenshot1]		![Alt][screenshot2]
 
-![screenshot1]:https://github.com/feialoh/DotAndBoxes/blob/master/dbScreenshot1.png
-![screenshot2]:https://github.com/feialoh/DotAndBoxes/blob/master/dbScreenshot2.png
+[screenshot1]:https://github.com/feialoh/DotAndBoxes/blob/master/dbScreenshot1.png
+[screenshot2]:https://github.com/feialoh/DotAndBoxes/blob/master/dbScreenshot2.png
 
 ## LICENSE
 
