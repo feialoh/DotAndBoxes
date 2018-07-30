@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29E4467298DCE43454267285 /* Pods_DotSpaceConquerorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10785400A8CA47937145B060 /* Pods_DotSpaceConquerorTests.framework */; };
+		325D5A58F147BAC66AA54503 /* Pods_DotSpaceConqueror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA362334EEEF2DB02A3CEFCE /* Pods_DotSpaceConqueror.framework */; };
 		6018E4511C0B23D700E31F13 /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6018E44F1C0B23D700E31F13 /* SidePanelViewController.swift */; };
 		6018E4521C0B23D700E31F13 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6018E4501C0B23D700E31F13 /* MenuItems.swift */; };
 		6018E4541C0B249D00E31F13 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6018E4531C0B249D00E31F13 /* ContainerViewController.swift */; };
@@ -52,6 +54,7 @@
 		C8A034711BFF00FB00EC96E1 /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A034701BFF00FB00EC96E1 /* MainGameViewController.swift */; };
 		C8A034741BFF240100EC96E1 /* NotSoStoutDeco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8A034721BFF196A00EC96E1 /* NotSoStoutDeco.ttf */; };
 		C8C4A4051DC86EE400ACF9FA /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C4A4041DC86EE400ACF9FA /* GoogleMobileAds.framework */; };
+		CF7E5DE278D7162DDA5DCF89 /* Pods_DotSpaceConquerorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CB10845615AA3ED0DE8B54 /* Pods_DotSpaceConquerorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07B8D1E9C5E15FB6B20B3236 /* Pods-DotSpaceConquerorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotSpaceConquerorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotSpaceConquerorTests/Pods-DotSpaceConquerorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		07D9DA42F57E274F2C248D7D /* Pods-DotSpaceConqueror.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotSpaceConqueror.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotSpaceConqueror/Pods-DotSpaceConqueror.release.xcconfig"; sourceTree = "<group>"; };
+		10785400A8CA47937145B060 /* Pods_DotSpaceConquerorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotSpaceConquerorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49CB10845615AA3ED0DE8B54 /* Pods_DotSpaceConquerorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotSpaceConquerorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6018E44F1C0B23D700E31F13 /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		6018E4501C0B23D700E31F13 /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		6018E4531C0B249D00E31F13 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +98,9 @@
 		60F1CE191C130CC40054950A /* HelpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpView.xib; sourceTree = "<group>"; };
 		60FBFE6C1C12EE58002C84ED /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		60FBFE6E1C12F23F002C84ED /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		82FFCF375FFA97494BE53F9B /* Pods-DotSpaceConquerorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotSpaceConquerorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotSpaceConquerorUITests/Pods-DotSpaceConquerorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		91011114BC4C94C7ACFC9D41 /* Pods-DotSpaceConqueror.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotSpaceConqueror.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotSpaceConqueror/Pods-DotSpaceConqueror.debug.xcconfig"; sourceTree = "<group>"; };
+		AACAF96715207B1143A67486 /* Pods-DotSpaceConquerorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotSpaceConquerorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotSpaceConquerorUITests/Pods-DotSpaceConquerorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C824127E1BD4C37800B788B2 /* DotSpaceConqueror.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotSpaceConqueror.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82412811BD4C37800B788B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C82412831BD4C37800B788B2 /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +134,8 @@
 		C8A034701BFF00FB00EC96E1 /* MainGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
 		C8A034721BFF196A00EC96E1 /* NotSoStoutDeco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotSoStoutDeco.ttf; sourceTree = "<group>"; };
 		C8C4A4041DC86EE400ACF9FA /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		EA362334EEEF2DB02A3CEFCE /* Pods_DotSpaceConqueror.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotSpaceConqueror.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F67169F1C8EB231411EE228D /* Pods-DotSpaceConquerorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotSpaceConquerorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotSpaceConquerorTests/Pods-DotSpaceConquerorTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +146,7 @@
 				C8C4A4051DC86EE400ACF9FA /* GoogleMobileAds.framework in Frameworks */,
 				C87566851C6B2FA000DEE40F /* GameKit.framework in Frameworks */,
 				C8645FAC1C4FC516007987E3 /* SystemConfiguration.framework in Frameworks */,
+				325D5A58F147BAC66AA54503 /* Pods_DotSpaceConqueror.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E4467298DCE43454267285 /* Pods_DotSpaceConquerorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7E5DE278D7162DDA5DCF89 /* Pods_DotSpaceConquerorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +190,24 @@
 				C8C4A4041DC86EE400ACF9FA /* GoogleMobileAds.framework */,
 				C87566841C6B2FA000DEE40F /* GameKit.framework */,
 				C8645FAB1C4FC516007987E3 /* SystemConfiguration.framework */,
+				EA362334EEEF2DB02A3CEFCE /* Pods_DotSpaceConqueror.framework */,
+				10785400A8CA47937145B060 /* Pods_DotSpaceConquerorTests.framework */,
+				49CB10845615AA3ED0DE8B54 /* Pods_DotSpaceConquerorUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		884085C9C90C403B44FD50F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91011114BC4C94C7ACFC9D41 /* Pods-DotSpaceConqueror.debug.xcconfig */,
+				07D9DA42F57E274F2C248D7D /* Pods-DotSpaceConqueror.release.xcconfig */,
+				07B8D1E9C5E15FB6B20B3236 /* Pods-DotSpaceConquerorTests.debug.xcconfig */,
+				F67169F1C8EB231411EE228D /* Pods-DotSpaceConquerorTests.release.xcconfig */,
+				82FFCF375FFA97494BE53F9B /* Pods-DotSpaceConquerorUITests.debug.xcconfig */,
+				AACAF96715207B1143A67486 /* Pods-DotSpaceConquerorUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		C82412751BD4C37700B788B2 = {
@@ -187,6 +218,7 @@
 				C82412A01BD4C37800B788B2 /* DotSpaceConquerorUITests */,
 				C824127F1BD4C37800B788B2 /* Products */,
 				604443441C214E2800111C59 /* Frameworks */,
+				884085C9C90C403B44FD50F9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,9 +347,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C82412A61BD4C37800B788B2 /* Build configuration list for PBXNativeTarget "DotSpaceConqueror" */;
 			buildPhases = (
+				42BFCA067BFA8951508AA60F /* [CP] Check Pods Manifest.lock */,
 				C824127A1BD4C37800B788B2 /* Sources */,
 				C824127B1BD4C37800B788B2 /* Frameworks */,
 				C824127C1BD4C37800B788B2 /* Resources */,
+				F3F81E8343EB70415989D2BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,6 +366,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C82412A91BD4C37800B788B2 /* Build configuration list for PBXNativeTarget "DotSpaceConquerorTests" */;
 			buildPhases = (
+				B0E3FEA7B64BFEFDE1473C73 /* [CP] Check Pods Manifest.lock */,
 				C824128E1BD4C37800B788B2 /* Sources */,
 				C824128F1BD4C37800B788B2 /* Frameworks */,
 				C82412901BD4C37800B788B2 /* Resources */,
@@ -350,6 +385,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C82412AC1BD4C37800B788B2 /* Build configuration list for PBXNativeTarget "DotSpaceConquerorUITests" */;
 			buildPhases = (
+				F46D81ED6A32AC606AECA050 /* [CP] Check Pods Manifest.lock */,
 				C82412991BD4C37800B788B2 /* Sources */,
 				C824129A1BD4C37800B788B2 /* Frameworks */,
 				C824129B1BD4C37800B788B2 /* Resources */,
@@ -462,6 +498,83 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42BFCA067BFA8951508AA60F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DotSpaceConqueror-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0E3FEA7B64BFEFDE1473C73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DotSpaceConquerorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3F81E8343EB70415989D2BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DotSpaceConqueror/Pods-DotSpaceConqueror-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DotSpaceConqueror/Pods-DotSpaceConqueror-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F46D81ED6A32AC606AECA050 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DotSpaceConquerorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C824127A1BD4C37800B788B2 /* Sources */ = {
@@ -637,6 +750,7 @@
 		};
 		C82412A71BD4C37800B788B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91011114BC4C94C7ACFC9D41 /* Pods-DotSpaceConqueror.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DotSpaceConqueror/DotSpaceConqueror.entitlements;
@@ -660,6 +774,7 @@
 		};
 		C82412A81BD4C37800B788B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07D9DA42F57E274F2C248D7D /* Pods-DotSpaceConqueror.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DotSpaceConqueror/DotSpaceConqueror.entitlements;
@@ -683,6 +798,7 @@
 		};
 		C82412AA1BD4C37800B788B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07B8D1E9C5E15FB6B20B3236 /* Pods-DotSpaceConquerorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -699,6 +815,7 @@
 		};
 		C82412AB1BD4C37800B788B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F67169F1C8EB231411EE228D /* Pods-DotSpaceConquerorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -715,6 +832,7 @@
 		};
 		C82412AD1BD4C37800B788B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82FFCF375FFA97494BE53F9B /* Pods-DotSpaceConquerorUITests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -731,6 +849,7 @@
 		};
 		C82412AE1BD4C37800B788B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AACAF96715207B1143A67486 /* Pods-DotSpaceConquerorUITests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";

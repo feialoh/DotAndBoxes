@@ -1,0 +1,6 @@
+framework module Pods_DotSpaceConquerorTests {
+  umbrella header "Pods-DotSpaceConquerorTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
