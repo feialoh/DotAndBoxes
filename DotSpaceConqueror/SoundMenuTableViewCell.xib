@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotSoStoutDeco.ttf">
+            <string>NotSoStoutDeco</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="soundMenuCell" rowHeight="151" id="LUt-zT-3iq" customClass="SoundMenuTableViewCell" customModule="DotSpaceConqueror" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="581" height="151"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUt-zT-3iq" id="LLH-76-HRo">
+                <rect key="frame" x="0.0" y="0.0" width="542" height="150.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3f-ag-h7A">
+                        <rect key="frame" x="18" y="18" width="506" height="20"/>
+                        <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gi-RM-X7D">
+                        <rect key="frame" x="18" y="43" width="506" height="17"/>
+                        <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trd-NE-5KE">
+                        <rect key="frame" x="18" y="65" width="506" height="17"/>
+                        <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="Trd-NE-5KE" firstAttribute="top" secondItem="6gi-RM-X7D" secondAttribute="bottom" constant="5" id="CRe-k6-guN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="G3f-ag-h7A" secondAttribute="trailing" constant="10" id="EaZ-sj-cmu"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Trd-NE-5KE" secondAttribute="bottom" constant="10" id="FiM-Md-SES"/>
+                    <constraint firstItem="G3f-ag-h7A" firstAttribute="top" secondItem="LLH-76-HRo" secondAttribute="topMargin" constant="10" id="L9s-qq-qhL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Trd-NE-5KE" secondAttribute="trailing" constant="10" id="QVu-kD-uA6"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="6gi-RM-X7D" secondAttribute="trailing" constant="10" id="TkQ-Ss-0Xw"/>
+                    <constraint firstItem="G3f-ag-h7A" firstAttribute="leading" secondItem="LLH-76-HRo" secondAttribute="leadingMargin" constant="10" id="U5m-jU-jqa"/>
+                    <constraint firstItem="6gi-RM-X7D" firstAttribute="top" secondItem="G3f-ag-h7A" secondAttribute="bottom" constant="5" id="krJ-s4-w7E"/>
+                    <constraint firstItem="Trd-NE-5KE" firstAttribute="leading" secondItem="6gi-RM-X7D" secondAttribute="leading" id="sDn-fd-Wjb"/>
+                    <constraint firstItem="6gi-RM-X7D" firstAttribute="leading" secondItem="G3f-ag-h7A" secondAttribute="leading" id="wFA-dj-AnQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="copyRightLabel" destination="Trd-NE-5KE" id="0Wu-cG-yOF"/>
+                <outlet property="subTitleLabel" destination="6gi-RM-X7D" id="I6V-cR-Ymm"/>
+                <outlet property="titleLabel" destination="G3f-ag-h7A" id="gwg-IN-0cd"/>
+            </connections>
+            <point key="canvasLocation" x="101" y="-147"/>
+        </tableViewCell>
+    </objects>
+</document>

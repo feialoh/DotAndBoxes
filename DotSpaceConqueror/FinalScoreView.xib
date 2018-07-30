@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotSoStoutDeco.ttf">
+            <string>NotSoStoutDeco</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FinalScoreView" customModule="DotSpaceConqueror" customModuleProvider="target">
+            <connections>
+                <outlet property="finalScoreLabel" destination="jxr-YZ-wpl" id="3Hf-wk-mL0"/>
+                <outlet property="finalScoreTable" destination="lBp-kG-1Sw" id="ypP-bs-BbX"/>
+                <outlet property="quitButton" destination="Vto-2u-lP5" id="sMw-j3-xeF"/>
+                <outlet property="restartButton" destination="L29-Dp-p0z" id="V1x-K9-hiK"/>
+                <outlet property="winnerLabel" destination="cxU-kr-RfK" id="LQw-mU-Wcd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="whitebg" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-cx-eOz">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Final Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxr-YZ-wpl">
+                    <rect key="frame" x="200" y="70" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="HdF-JD-wnp"/>
+                        <constraint firstAttribute="width" constant="200" id="IxH-x5-nZz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="27"/>
+                    <color key="textColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Winner Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cxU-kr-RfK">
+                    <rect key="frame" x="0.0" y="146" width="600" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="D3m-NR-G8Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="27"/>
+                    <color key="textColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lBp-kG-1Sw">
+                    <rect key="frame" x="75" y="194" width="450" height="291"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="d57-gs-yd0"/>
+                        <outlet property="delegate" destination="-1" id="rsH-ou-o0l"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vto-2u-lP5">
+                    <rect key="frame" x="75" y="505" width="39" height="41"/>
+                    <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="20"/>
+                    <state key="normal" title="Quit">
+                        <color key="titleColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="quitAction:" destination="-1" eventType="touchUpInside" id="oe8-lb-VP1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L29-Dp-p0z">
+                    <rect key="frame" x="455" y="505" width="70" height="41"/>
+                    <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="20"/>
+                    <state key="normal" title="Restart">
+                        <color key="titleColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="restartAction:" destination="-1" eventType="touchUpInside" id="7cO-6R-HgH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="L29-Dp-p0z" firstAttribute="trailing" secondItem="lBp-kG-1Sw" secondAttribute="trailing" id="2Os-6M-0Qw"/>
+                <constraint firstItem="L29-Dp-p0z" firstAttribute="top" secondItem="Vto-2u-lP5" secondAttribute="top" id="6Xo-bO-CS1"/>
+                <constraint firstItem="SIo-cx-eOz" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="91m-hY-2vL"/>
+                <constraint firstItem="Vto-2u-lP5" firstAttribute="top" secondItem="lBp-kG-1Sw" secondAttribute="bottom" constant="20" id="Byv-cC-uIf"/>
+                <constraint firstItem="jxr-YZ-wpl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="62" id="C5D-pn-g3F"/>
+                <constraint firstItem="SIo-cx-eOz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerXWithinMargins" id="DHr-rs-JDo"/>
+                <constraint firstItem="lBp-kG-1Sw" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="3/4" id="FGl-wl-mXL"/>
+                <constraint firstItem="Vto-2u-lP5" firstAttribute="leading" secondItem="lBp-kG-1Sw" secondAttribute="leading" id="G83-So-XcZ"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Vto-2u-lP5" secondAttribute="bottom" constant="46" id="GVH-HS-L4W"/>
+                <constraint firstAttribute="bottom" secondItem="lBp-kG-1Sw" secondAttribute="bottom" id="K8a-lC-dj0"/>
+                <constraint firstItem="cxU-kr-RfK" firstAttribute="centerX" secondItem="jxr-YZ-wpl" secondAttribute="centerX" id="Xkl-q6-2OZ"/>
+                <constraint firstItem="L29-Dp-p0z" firstAttribute="bottom" secondItem="Vto-2u-lP5" secondAttribute="bottom" id="YXS-5A-D2U"/>
+                <constraint firstItem="cxU-kr-RfK" firstAttribute="top" secondItem="jxr-YZ-wpl" secondAttribute="bottom" constant="36" id="Znh-Jp-osb"/>
+                <constraint firstItem="lBp-kG-1Sw" firstAttribute="centerX" secondItem="cxU-kr-RfK" secondAttribute="centerX" id="d8p-se-QCA"/>
+                <constraint firstItem="cxU-kr-RfK" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="eXg-kb-Mea"/>
+                <constraint firstItem="SIo-cx-eOz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerYWithinMargins" id="ece-qE-PWJ"/>
+                <constraint firstItem="lBp-kG-1Sw" firstAttribute="top" secondItem="cxU-kr-RfK" secondAttribute="bottom" constant="8" id="lDI-ab-2ui"/>
+                <constraint firstItem="lBp-kG-1Sw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="3/4" priority="750" id="nlg-01-LSy"/>
+                <constraint firstItem="jxr-YZ-wpl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerXWithinMargins" id="onN-oc-WUM"/>
+                <constraint firstItem="SIo-cx-eOz" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="u2R-kk-NDl"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="K8a-lC-dj0"/>
+                    <exclude reference="nlg-01-LSy"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="whitebg" width="320" height="480"/>
+    </resources>
+</document>
