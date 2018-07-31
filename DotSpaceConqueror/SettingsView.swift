@@ -17,7 +17,7 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
     
     var startStatus:Bool!
     
-    let limitLength = 20
+    let limitLength = 25
     
     @IBOutlet weak var settingsHeading: UILabel!
     
@@ -78,7 +78,16 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
         else
         {
             startStatus = true
-            settingsData = ["single":UIDevice.current.name as AnyObject, "multiplesame":["Player1","Player2","Player3","Player4","Player5"],"startFirst":startStatus]
+            var displayName = UIDevice.current.name
+            
+            print("count=",displayName.count)
+            
+            if displayName.count > limitLength
+            {
+                displayName = String(displayName.prefix(limitLength))
+            }
+            
+            settingsData = ["single":displayName, "multiplesame":["Player1","Player2","Player3","Player4","Player5"],"startFirst":startStatus]
         }
         
         playerRealName.text = settingsData["single"] as? String
