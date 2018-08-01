@@ -288,7 +288,18 @@ class CenterViewController: UIViewController {
         let volume = soundDetails["volume"] as! Float
         let selectedIndexPath = IndexPath(row: newIndex[0], section: newIndex[1])
         
-        SoundManager.sharedInstance.playSong(fileName: menus[(selectedIndexPath as NSIndexPath).row].title, fileType: "mp3", volume:volume)
+        if let audioPlayer = SoundManager.sharedInstance.audioPlayer
+        {
+            if !audioPlayer.isPlaying
+            {
+                SoundManager.sharedInstance.playSong(fileName: menus[(selectedIndexPath as NSIndexPath).row].title, fileType: "mp3", volume:volume)
+            }
+        }
+        else
+        {
+            SoundManager.sharedInstance.playSong(fileName: menus[(selectedIndexPath as NSIndexPath).row].title, fileType: "mp3", volume:volume)
+        }
+        
 
     }
     
