@@ -227,7 +227,7 @@ class Utilities{
     
     class func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
         
-        #if DEBUG
+//        #if DEBUG
         
         var idx = items.startIndex
         let endIdx = items.endIndex
@@ -238,7 +238,7 @@ class Utilities{
         }
             while idx < endIdx
         
-        #endif
+//        #endif
     }
     
     class func showAlertViewMessageAndTitle(_ message:String, title:String, delegate:Any?, cancelButtonTitle:String) -> UIAlertController

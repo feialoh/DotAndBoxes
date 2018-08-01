@@ -198,7 +198,7 @@
                                 <rect key="frame" x="0.0" y="10" width="768" height="1024"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XE-cb-Cym">
-                                <rect key="frame" x="98" y="755" width="103" height="198.5"/>
+                                <rect key="frame" x="98" y="755" width="109" height="198.5"/>
                                 <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="20"/>
                                 <state key="normal" title="Start Game"/>
                                 <connections>
@@ -206,7 +206,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJB-Jh-mk7">
-                                <rect key="frame" x="569" y="755" width="103" height="198.5"/>
+                                <rect key="frame" x="563" y="755" width="109" height="198.5"/>
                                 <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="20"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -285,15 +285,40 @@
                                     <constraint firstAttribute="height" constant="90" id="QFc-DJ-3qx"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e6-78-Lqp">
+                                <rect key="frame" x="0.0" y="84" width="768" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qyD-UP-iyE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqP-q3-YTA">
+                                <rect key="frame" x="0.0" y="134" width="768" height="800"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9e6-78-Lqp" firstAttribute="width" secondItem="0Bj-zo-hl9" secondAttribute="width" id="7Gq-2P-L0f"/>
+                            <constraint firstItem="9e6-78-Lqp" firstAttribute="top" secondItem="ih7-Yv-uTY" secondAttribute="bottom" constant="20" id="BWN-CT-5Pm"/>
+                            <constraint firstItem="YqP-q3-YTA" firstAttribute="top" secondItem="9e6-78-Lqp" secondAttribute="bottom" id="JCh-as-Gt4"/>
+                            <constraint firstItem="YqP-q3-YTA" firstAttribute="leading" secondItem="0Bj-zo-hl9" secondAttribute="leading" id="Rap-mD-uHt"/>
+                            <constraint firstItem="Pze-k0-8Ka" firstAttribute="top" secondItem="YqP-q3-YTA" secondAttribute="bottom" id="RvZ-PI-EPW"/>
+                            <constraint firstItem="9e6-78-Lqp" firstAttribute="centerX" secondItem="0Bj-zo-hl9" secondAttribute="centerX" id="auK-l1-fOG"/>
                             <constraint firstItem="Pze-k0-8Ka" firstAttribute="width" secondItem="0Bj-zo-hl9" secondAttribute="width" id="etg-ca-bWs"/>
                             <constraint firstItem="Pze-k0-8Ka" firstAttribute="centerX" secondItem="0Bj-zo-hl9" secondAttribute="centerXWithinMargins" id="u6g-cz-t6K"/>
+                            <constraint firstAttribute="trailing" secondItem="YqP-q3-YTA" secondAttribute="trailing" id="yCP-op-1tW"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Pze-k0-8Ka" secondAttribute="bottom" id="yks-cP-LAL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dHa-BX-Drm"/>
+                    <connections>
+                        <outlet property="dotContainerView" destination="YqP-q3-YTA" id="aRD-Jt-MpO"/>
+                        <outlet property="playerTurn" destination="9e6-78-Lqp" id="VDw-PB-nxr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd0-9c-asg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

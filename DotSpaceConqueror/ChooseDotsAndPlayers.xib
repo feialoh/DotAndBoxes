@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseDotAndPlayers" customModule="DotSpaceConqueror" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="6AY-sD-9tC" id="D8d-mc-bM5"/>
                 <outlet property="headingLabel" destination="Yjr-1B-hWr" id="Btd-lS-HjN"/>
                 <outlet property="topMargin" destination="Ajy-PC-RQG" id="gNt-jH-GQO"/>
             </connections>
@@ -31,24 +32,32 @@
                     <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjr-1B-hWr">
-                    <rect key="frame" x="12.5" y="70" width="350" height="50"/>
+                    <rect key="frame" x="0.0" y="40" width="375" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="350" id="0DR-67-3Rx"/>
                         <constraint firstAttribute="height" constant="50" id="gyp-kw-hWO"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="30"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AY-sD-9tC">
+                    <rect key="frame" x="0.0" y="90" width="375" height="577"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="x04-Cp-WBR" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="0nD-pj-F3a"/>
-                <constraint firstItem="Yjr-1B-hWr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="50" id="Ajy-PC-RQG"/>
+                <constraint firstAttribute="bottom" secondItem="6AY-sD-9tC" secondAttribute="bottom" id="9R5-A8-fah"/>
+                <constraint firstItem="6AY-sD-9tC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AD7-kh-zDv"/>
+                <constraint firstItem="Yjr-1B-hWr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="20" id="Ajy-PC-RQG"/>
                 <constraint firstItem="x04-Cp-WBR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerXWithinMargins" id="JxU-14-YLo"/>
                 <constraint firstItem="x04-Cp-WBR" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="PLJ-EC-57D"/>
                 <constraint firstItem="x04-Cp-WBR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerYWithinMargins" id="aQg-YN-kTI"/>
+                <constraint firstItem="Yjr-1B-hWr" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="fK0-Wj-8J3"/>
                 <constraint firstItem="Yjr-1B-hWr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerXWithinMargins" id="jha-cp-NTk"/>
+                <constraint firstItem="6AY-sD-9tC" firstAttribute="top" secondItem="Yjr-1B-hWr" secondAttribute="bottom" id="ldn-1X-0pC"/>
+                <constraint firstAttribute="trailing" secondItem="6AY-sD-9tC" secondAttribute="trailing" id="ofC-ke-fLZ"/>
             </constraints>
         </view>
     </objects>

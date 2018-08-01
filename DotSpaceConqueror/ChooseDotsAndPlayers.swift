@@ -20,6 +20,8 @@ class ChooseDotAndPlayers: UIView {
     @IBOutlet weak var topMargin: NSLayoutConstraint!
     
     
+    @IBOutlet weak var containerView: UIView!
+    
     var view: UIView!
     var dotButtons:UIButton!
     var selectedNo:Int = 0
@@ -76,7 +78,7 @@ class ChooseDotAndPlayers: UIView {
         
         var x:CGFloat = (UIScreen.main.bounds.size.width - btnSize*(CGFloat(rows)+1))/2
         
-        var y:CGFloat = headingLabel.frame.origin.y + headingLabel.frame.size.height+50
+        var y:CGFloat = headingLabel.frame.origin.y + headingLabel.frame.size.height
         
         
        
@@ -96,13 +98,13 @@ class ChooseDotAndPlayers: UIView {
                 dotButtons.setTitleColor(Utilities.ColorCodeRGB(0x616161), for: UIControlState())
                 dotButtons.setTitleColor(Utilities.ColorCodeRGB(0xe65b0b), for: UIControlState.selected)
                 dotButtons.titleLabel?.font = UIFont(name: "NotSoStoutDeco", size: dotButtons.frame.height/2)!
-                self.view.addSubview(dotButtons)
+                containerView.addSubview(dotButtons)
                 dotBtnTag += 1
                 x += dotButtons.frame.size.width + btnSize
             }
             
             x = (UIScreen.main.bounds.size.width - btnSize*(CGFloat(rows)+1))/2
-            y += dotButtons.frame.size.height + btnSize
+            y += dotButtons.frame.size.height + (IS_IPAD ? btnSize/2:btnSize)
         }
 
 
@@ -119,7 +121,7 @@ class ChooseDotAndPlayers: UIView {
     
     func toggleSelectedButtonState()
     {
-        for element in self.view.subviews
+        for element in containerView.subviews
         {
             if element.isKind(of: UIButton.self)
             {

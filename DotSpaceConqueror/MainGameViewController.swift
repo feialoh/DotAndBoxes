@@ -20,6 +20,10 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     
 //    @IBOutlet weak var bannerView: GADBannerView!
     
+    @IBOutlet weak var playerTurn: UILabel!
+    
+    
+    @IBOutlet weak var dotContainerView: UIView!
     
     var noOfDots, playerCount:Int?
 
@@ -34,7 +38,6 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     var player:MCPeerID!
     var playerChange: Bool = false,selfTurn: Bool = false,changeActive:Bool = false
     
-    var playerTurn:UILabel!
     var iValue: Int = 0,colorValue:Int = 0, playerPlayIndex:Int = 1
     
     var gameType, difficultyLevel:String?
@@ -332,7 +335,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
 //            
 //        }
         
-        for element in self.view.layer.sublayers!
+        for element in dotContainerView.layer.sublayers!
         {
             if element.name == "lines"
             {
@@ -343,7 +346,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             
         }
         
-        for viewItem in self.view.subviews
+        for viewItem in dotContainerView.subviews
         {
             if viewItem.isKind(of: UIView.self) || viewItem.isKind(of: UIButton.self)
             {
@@ -356,17 +359,19 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         }
 
         
-        Utilities.print("Count=\(self.view.subviews.count)")
+        Utilities.print("Count=\(dotContainerView.subviews.count)")
+        
+        playerTurn.isHidden = false
         
         if( gameType == "Mutliplayer")
         {
             
             notifyOtherPlayersForReset()
             
-            playerTurn = UILabel(frame: CGRect(x: 130,y: 50,width: 150, height: 20.0))
-            playerTurn.autoresizingMask = UIViewAutoresizing.flexibleWidth
-            playerTurn.backgroundColor = UIColor.clear
-            self.view.addSubview(playerTurn)
+//            playerTurn = UILabel(frame: CGRect(x: 130,y: 50,width: 150, height: 20.0))
+//            playerTurn.autoresizingMask = UIViewAutoresizing.flexibleWidth
+//            playerTurn.backgroundColor = UIColor.clear
+//            self.view.addSubview(playerTurn)
             
             selfTurn = true
             playerChange = true
@@ -423,10 +428,10 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     {
 //        showAds()
         selectedButtons = []
-        playerTurn = UILabel(frame: CGRect(x: 130,y: 50,width: 150, height: 20));
-        playerTurn.autoresizingMask = UIViewAutoresizing.flexibleWidth
-        playerTurn.backgroundColor = UIColor.clear
-        self.view.addSubview(playerTurn)
+//        playerTurn = UILabel(frame: CGRect(x: 130,y: 50,width: 150, height: 20));
+//        playerTurn.autoresizingMask = UIViewAutoresizing.flexibleWidth
+//        playerTurn.backgroundColor = UIColor.clear
+//        self.view.addSubview(playerTurn)
         
         selfTurn     =  true
         playerChange =  true
@@ -473,7 +478,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             
             
             
-            if getFilteredName(noOfPlayers[iValue-1].playerName).count == 0
+            if Utilities.filterString(noOfPlayers[iValue-1].playerName).count == 0
             {
                 playerTurn.text = "Player's Turn"
             }
@@ -482,7 +487,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                 playerTurn.text =  noOfPlayers[iValue-1].playerName+"'s turn"
                 playerTurn.font = Utilities.myFontWithSize(plylblSize)
                 playerTurn.textColor = UIColor.yellow
-                Utilities.adjustTurnLabel(plylblSize,myLabel: playerTurn)
+//                Utilities.adjustTurnLabel(plylblSize,myLabel: playerTurn)
             }
 
             
@@ -499,7 +504,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             //set player
             player  = noOfPlayers[iValue-1].playerID
             
-            if getFilteredName(noOfPlayers[iValue-1].playerName).count == 0
+            if Utilities.filterString(noOfPlayers[iValue-1].playerName).count == 0
             {
                 playerTurn.text = "Player's Turn"
             }
@@ -508,7 +513,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                 playerTurn.text =  noOfPlayers[iValue-1].playerName+"'s turn"
                 playerTurn.font = Utilities.myFontWithSize(plylblSize)
                 playerTurn.textColor = UIColor.yellow
-                Utilities.adjustTurnLabel(plylblSize,myLabel: playerTurn)
+//                Utilities.adjustTurnLabel(plylblSize,myLabel: playerTurn)
             }
 
         }
@@ -544,9 +549,9 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         scaleFactor = (viewWidthHeight/((3*CGFloat(noOfDots!))-2))
 
         x = (UIScreen.main.bounds.size.width-viewWidthHeight)/2
-        y = (UIScreen.main.bounds.size.height-viewWidthHeight)/2
+//        y = (UIScreen.main.bounds.size.height-viewWidthHeight)/2
         
-        y = playerTurn.frame.origin.y + playerTurn.frame.size.height + MARGIN
+        y = playerTurn.frame.origin.y + playerTurn.frame.size.height + MARGIN - 20
         
         
        
@@ -558,7 +563,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                 let circleView: UIImageView = UIImageView(frame: CGRect(x: x,y: y,width: scaleFactor,height: scaleFactor))
                 circleView.layer.cornerRadius = circleView.frame.size.height/2;
                 circleView.backgroundColor = UIColor.white
-                self.view.addSubview(circleView)
+                dotContainerView.addSubview(circleView)
                 
                 if (j != noOfDots!-1)
                 {
@@ -567,7 +572,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                     buttonX.frame = CGRect(x: circleView.frame.origin.x+circleView.frame.size.width, y: y, width: 2*scaleFactor, height: scaleFactor);
                     buttonX.tag = btnTag
 //                    buttonX.backgroundColor = UIColor.greenColor()
-                    self.view.addSubview(buttonX)
+                    dotContainerView.addSubview(buttonX)
                     
 
                     horizontalArray.append(ButtonDetail(btnId: btnTag, startEnd: (i*noOfDots!+j, i*noOfDots!+j+1), btnActive: false)!)
@@ -584,7 +589,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                     buttonY.frame = CGRect(x: circleView.frame.origin.x, y: circleView.frame.origin.y+circleView.frame.size.height,width: scaleFactor,height: 2*scaleFactor);
                     buttonY.tag = btnTag
 //                    buttonY.backgroundColor = UIColor.redColor()
-                    self.view.addSubview(buttonY)
+                    dotContainerView.addSubview(buttonY)
 
                     verticalArray.append(ButtonDetail(btnId: btnTag, startEnd: (i*noOfDots!+j, i*noOfDots!+j+noOfDots!), btnActive: false)!)
 
@@ -597,7 +602,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                     let paintView = UIView(frame: CGRect(x: buttonX.frame.origin.x,y: buttonX.frame.origin.y+buttonX.frame.size.height, width: 2*scaleFactor, height: 2*scaleFactor))
 //                    paintView.backgroundColor = UIColor.blueColor()
                     paintView.tag = viewTag
-                    self.view.addSubview(paintView)
+                    dotContainerView.addSubview(paintView)
                     
                     var xy:[(Int,Int)]
                     var x1, y1:Int
@@ -928,7 +933,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             
             player = noOfPlayers[iValue-1].playerID
             
-            if getFilteredName(noOfPlayers[iValue-1].playerName).count == 0
+            if Utilities.filterString(noOfPlayers[iValue-1].playerName).count == 0
             {
                 playerTurn.text = "Player's Turn"
             }
@@ -937,7 +942,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                 playerTurn.text =  noOfPlayers[iValue-1].playerName+"'s turn"
                 playerTurn.font = Utilities.myFontWithSize(plylblSize)
                 playerTurn.textColor = UIColor.yellow
-                Utilities.adjustTurnLabel(plylblSize,myLabel: playerTurn)
+//                Utilities.adjustTurnLabel(plylblSize,myLabel: playerTurn)
             }
             
             setPlayerTurnForMultiplayer()
@@ -1115,21 +1120,6 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
 //        bannerView.load(request)
 //    }
     
-    //Filter the device name
-    
-    func getFilteredName(_ str:String) ->String
-    {
-        
-        if str.range(of: "$#$#$-") != nil{
-            let equalRange: Range = str.range(of: "$#$#$-")!
-            let result:String = String(str[equalRange.upperBound...])
-            return result
-        }
-        else
-        {
-            return str
-        }
-    }
     
     func rotateImage(_ image:UIImage, degrees:CGFloat)-> UIImage
     {
@@ -1159,7 +1149,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     {
         var myView:UIView = UIView.init()
 
-        for element in self.view.subviews
+        for element in dotContainerView.subviews
         {
             if element.isKind(of: UIView.self)
             {
@@ -1178,7 +1168,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     {
         var myView:UIButton = UIButton.init()
         
-        for element in self.view.subviews
+        for element in dotContainerView.subviews
         {
             if element.isKind(of: UIButton.self)
             {
@@ -1323,7 +1313,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
         
         // Create a CAShape Layer
         let pathLayer: CAShapeLayer = CAShapeLayer()
-        pathLayer.frame = self.view.bounds
+        pathLayer.frame = dotContainerView.bounds
         pathLayer.path = path.cgPath
         pathLayer.strokeColor = noOfPlayers[iValue-1].color[iValue-1].cgColor //UIColor.redColor().CGColor
         pathLayer.fillColor = nil
@@ -1332,7 +1322,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
         pathLayer.lineCap = kCALineCapRound
         pathLayer.name = "lines"
         // Add layer to views layer
-        self.view.layer.addSublayer(pathLayer)
+        dotContainerView.layer.addSublayer(pathLayer)
         
         // Basic Animation
         let pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -1363,7 +1353,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
             }
             playerTurn.font = Utilities.myFontWithSize(plylblSize)
             playerTurn.textColor = UIColor.yellow
-            Utilities.adjustTurnLabel(plylblSize,myLabel: playerTurn)
+//            Utilities.adjustTurnLabel(plylblSize,myLabel: playerTurn)
         }
     }
     
@@ -1372,7 +1362,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
     func setPlayerInteractionStatus(_ values:Bool)
     {
         var value = values
-        for element in self.view.subviews
+        for element in dotContainerView.subviews
         {
             Utilities.print(element)
             if element.isKind(of: FinalScoreView.classForCoder())
@@ -1382,7 +1372,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
             }
         }
         
-        for element in self.view.subviews
+        for element in dotContainerView.subviews
         {
             if element.isKind(of: UIView.self)
             {
