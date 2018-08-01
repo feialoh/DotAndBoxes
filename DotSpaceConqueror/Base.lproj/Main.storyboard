@@ -198,7 +198,7 @@
                                 <rect key="frame" x="0.0" y="10" width="768" height="1024"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XE-cb-Cym">
-                                <rect key="frame" x="98" y="755" width="109" height="198.5"/>
+                                <rect key="frame" x="98" y="755" width="103" height="198.5"/>
                                 <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="20"/>
                                 <state key="normal" title="Start Game"/>
                                 <connections>
@@ -206,7 +206,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJB-Jh-mk7">
-                                <rect key="frame" x="563" y="755" width="109" height="198.5"/>
+                                <rect key="frame" x="569" y="755" width="103" height="198.5"/>
                                 <fontDescription key="fontDescription" name="NotSoStoutDeco" family="Not So Stout Deco" pointSize="20"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -245,7 +245,6 @@
                             <constraint firstItem="rAK-1V-D3o" firstAttribute="centerY" secondItem="T4b-WZ-zrB" secondAttribute="centerYWithinMargins" id="ARL-VA-OSF"/>
                             <constraint firstItem="waK-rB-30j" firstAttribute="top" secondItem="T4b-WZ-zrB" secondAttribute="topMargin" constant="100" id="DHe-Xs-saL"/>
                             <constraint firstItem="yJB-Jh-mk7" firstAttribute="centerY" secondItem="4XE-cb-Cym" secondAttribute="centerY" id="GsP-zJ-jPK"/>
-                            <constraint firstItem="yJB-Jh-mk7" firstAttribute="leading" secondItem="4XE-cb-Cym" secondAttribute="trailing" constant="356" id="I9M-ni-QZ4"/>
                             <constraint firstItem="rAK-1V-D3o" firstAttribute="width" secondItem="T4b-WZ-zrB" secondAttribute="width" id="TE8-tf-97i"/>
                             <constraint firstItem="yJB-Jh-mk7" firstAttribute="trailing" secondItem="waK-rB-30j" secondAttribute="trailing" id="Vm5-xc-eiy"/>
                             <constraint firstItem="4XE-cb-Cym" firstAttribute="top" secondItem="waK-rB-30j" secondAttribute="bottom" constant="20" id="W8i-mS-Sx1"/>
