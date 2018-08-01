@@ -51,6 +51,8 @@ let MP_RULES = "Multiplayer currently supports upto 5 players on same and differ
 
 let IS_IPAD = (UIDevice.current.userInterfaceIdiom == .pad)
 
-let FONT_SIZE:CGFloat = IS_IPAD ? 30.0 : 16.0
+let FONT_SIZE:CGFloat   = IS_IPAD ? 30.0 : 16.0
 
 let DEVICE_ID           = UIDevice.current.identifierForVendor!.uuidString
+
+let NAME_LENGTH:Int     = IS_IPAD ? 30  : 20

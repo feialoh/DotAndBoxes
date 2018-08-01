@@ -15,8 +15,9 @@ class DotSpaceConquerorTests: XCTestCase {
         super.setUp()
 
         XCTAssertEqual("123Feialoh", getFilteredName("123Feialoh"))
+        XCTAssertEqual(getFilteredName("Apple Testing Device 1$#$#$-AA7E8398-E3CB-4443-8563-14FD01C4AFCC"), "Apple Testing Device")
         
-        XCTAssertEqual("Feialoh".characters.count,7)
+        XCTAssertEqual("Feialoh".count,7)
         
         var playerTitle: [[String:AnyObject]] = []
         
@@ -25,7 +26,7 @@ class DotSpaceConquerorTests: XCTestCase {
          playerTitle.append(["player":"Akhil" as AnyObject,"id":3 as AnyObject,"fillCount":5 as AnyObject,"Color":UIColor.gray])
          playerTitle.append(["player":"Binoj" as AnyObject,"id":4 as AnyObject,"fillCount":6 as AnyObject,"Color":UIColor.green])
         
-        print("\(playerTitle)")
+        Utilities.print("\(playerTitle)")
         
         playerTitle.sort {
             item1, item2 in
@@ -36,7 +37,7 @@ class DotSpaceConquerorTests: XCTestCase {
         
 
         
-        print("\(playerTitle)")
+        Utilities.print("\(playerTitle)")
         
         XCTAssertEqual("Vishnu",playerTitle[0]["player"] as? String)
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -49,10 +50,16 @@ class DotSpaceConquerorTests: XCTestCase {
     
     func getFilteredName(_ str:String) ->String
     {
+        let limitLength = 20
         
         if str.range(of: "$#$#$-") != nil{
             let equalRange: Range = (str.range(of: "$#$#$-"))!
-            let result:String = str.substring(from: equalRange.upperBound)
+            var result:String = String(str.prefix(upTo: equalRange.lowerBound))
+            
+            if result.count > limitLength
+            {
+                result = String(result.prefix(limitLength))
+            }
             return result
         }
         else
@@ -67,11 +74,11 @@ class DotSpaceConquerorTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measure {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
     
 }

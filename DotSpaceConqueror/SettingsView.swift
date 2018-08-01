@@ -17,8 +17,6 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
     
     var startStatus:Bool!
     
-    let limitLength = 25
-    
     @IBOutlet weak var settingsHeading: UILabel!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -56,7 +54,7 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
         self.view = Utilities.loadViewFromNib("SettingsView", atIndex: 0, aClass: Swift.type(of: self),parent:self) as! UIView
         self.view.frame = frame
         self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-        print("\(scrollView)")
+        Utilities.print("\(scrollView)")
         parent.saveDelegate = self
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "whitebg")!)
         addSubview(self.view)
@@ -71,7 +69,7 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
            //show details
             
             settingsData = Utilities.getDefaultValue(self.valueStoreKey) as! Dictionary<String,Any>
-            print("\(settingsData)")
+            Utilities.print("\(settingsData)")
             
             
         }
@@ -80,21 +78,21 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
             startStatus = true
             var displayName = UIDevice.current.name
             
-            print("count=",displayName.count)
+            Utilities.print("count=",displayName.count)
             
-            if displayName.count > limitLength
+            if displayName.count > NAME_LENGTH
             {
-                displayName = String(displayName.prefix(limitLength))
+                displayName = String(displayName.prefix(NAME_LENGTH))
             }
             
             settingsData = ["single":displayName, "multiplesame":["Player1","Player2","Player3","Player4","Player5"],"startFirst":startStatus]
         }
         
         playerRealName.text = settingsData["single"] as? String
-        print("\(settingsData)")
+        Utilities.print("\(settingsData)")
         var multiplayerNames:[String] = []
         multiplayerNames = (settingsData["multiplesame"] as? [String])!
-        print("\(multiplayerNames)")
+        Utilities.print("\(multiplayerNames)")
         player1Name.text = multiplayerNames[0]
         player2Name.text = multiplayerNames[1]
         player3Name.text = multiplayerNames[2]
@@ -126,7 +124,7 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        print("\(textField.frame.origin.y + textField.frame.size.height)==\(self.view.frame.height - 250)")
+        Utilities.print("\(textField.frame.origin.y + textField.frame.size.height)==\(self.view.frame.height - 250)")
         if (textField.frame.origin.y + textField.frame.size.height) > (self.view.frame.height - 250)
         {
             scrollView.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
@@ -145,7 +143,7 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.count + string.count - range.length
-        return newLength <= limitLength
+        return newLength <= NAME_LENGTH
     }
 }
 

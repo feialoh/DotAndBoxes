@@ -110,7 +110,7 @@ class ChooseDotAndPlayers: UIView {
     
     @objc func dotButtonAction(_ sender:UIButton!)
     {
-        print("\(sender.tag) pressed" )
+        Utilities.print("\(sender.tag) pressed" )
         
         selectedNo = sender.tag
         Utilities.storeDataToDefaults(self.valueStoreKey, data: selectedNo as AnyObject)

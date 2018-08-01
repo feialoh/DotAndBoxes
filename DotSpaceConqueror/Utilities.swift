@@ -204,12 +204,19 @@ class Utilities{
         
     }*/
     
+    
+    
     class func filterString(_ str:String) ->String
     {
-
+        
         if str.range(of: "$#$#$-") != nil{
             let equalRange: Range = (str.range(of: "$#$#$-"))!
-            let result:String = String(str[equalRange.upperBound...])
+            var result:String = String(str.prefix(upTo: equalRange.lowerBound))
+            
+            if result.count > NAME_LENGTH
+            {
+                result = String(result.prefix(NAME_LENGTH))
+            }
             return result
         }
         else
@@ -218,6 +225,21 @@ class Utilities{
         }
     }
     
+    class func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+        
+        #if DEBUG
+        
+        var idx = items.startIndex
+        let endIdx = items.endIndex
+        
+        repeat {
+            Swift.print(items[idx], separator: separator, terminator: idx == (endIdx - 1) ? terminator : separator)
+            idx += 1
+        }
+            while idx < endIdx
+        
+        #endif
+    }
     
     class func showAlertViewMessageAndTitle(_ message:String, title:String, delegate:Any?, cancelButtonTitle:String) -> UIAlertController
     {

@@ -49,7 +49,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("NO of dots:\(dotNo)")
+        Utilities.print("NO of dots:\(dotNo)")
         
         let multipeerAlert = UIAlertController(title: "Host or Join?", message: "Do you wish to host a new game or join an existing one?", preferredStyle: UIAlertControllerStyle.alert)
         let Host = UIAlertAction(title: "Host", style: UIAlertActionStyle.default) {
@@ -93,7 +93,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
             appDelegate.mpcManager = MPCManager()
 //        }
         
-        print("Session is =\(appDelegate.mpcManager.session)")
+        Utilities.print("Session is =\(appDelegate.mpcManager.session)")
         
         appDelegate.mpcManager.delegate = self
         // Do any additional setup after loading the view.
@@ -160,8 +160,8 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func startGameAction(_ sender: UIButton) {
         
-        print("Connected players count-\(self.appDelegate.mpcManager.foundPeers.count)")
-        print("SELF ID-\(self.appDelegate.mpcManager.peer)")
+        Utilities.print("Connected players count-\(self.appDelegate.mpcManager.foundPeers.count)")
+        Utilities.print("SELF ID-\(self.appDelegate.mpcManager.peer)")
         
         let messageDict = [NO_DOTS:dotNo,NO_PLAYERS:playerNos]
         
@@ -179,7 +179,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
         
         if error != nil
         {
-            print("error: \(String(describing: error?.localizedDescription))")
+            Utilities.print("error: \(String(describing: error?.localizedDescription))")
         }
         else
         {
@@ -199,7 +199,6 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
         _ = self.navigationController?.popViewController(animated: true)
         NotificationCenter.default.removeObserver(self)
         
-        print ("\(String(describing: self.navigationController?.viewControllers))-count:\(String(describing: self.navigationController?.viewControllers.count))")
     }
 
     
@@ -225,7 +224,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell")! as UITableViewCell
         
-        print("cell for row entered:\(appDelegate.mpcManager.foundPeers.count)")
+        Utilities.print("cell for row entered:\(appDelegate.mpcManager.foundPeers.count)")
         if appDelegate.mpcManager.foundPeers.count == 0
         {
             let placeholderCell = tableView.dequeueReusableCell(withIdentifier: "placeholderCell")! as UITableViewCell
@@ -255,7 +254,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        print("userType=\(userType)-request=\(invitationRequest)")
+        Utilities.print("userType=\(userType)-request=\(invitationRequest)")
         if userType == "Guest" && invitationRequest == true
         {
             if appDelegate.mpcManager.foundPeers.count > 0
@@ -324,13 +323,13 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     // MARK: MPCManagerDelegate method implementation
     
     func foundPeer() {
-        print("\(#function)triggered from MultipeerVC")
+        Utilities.print("\(#function)triggered from MultipeerVC")
         playerTable.reloadData()
     }
     
     
     func lostPeer() {
-        print("\(#function)triggered from MultipeerVC")
+        Utilities.print("\(#function)triggered from MultipeerVC")
         playerTable.reloadData()
     }
     
@@ -346,7 +345,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
                 let acceptAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) {
                     (result : UIAlertAction) -> Void in
                     
-                    print("Accept=\(self.appDelegate.mpcManager.session.connectedPeers.count)")
+                    Utilities.print("Accept=\(self.appDelegate.mpcManager.session.connectedPeers.count)")
                     if self.appDelegate.mpcManager.session.connectedPeers.count + 1 > MAX_PLAYERS
                     {
                         DispatchQueue.main.async(execute: {
@@ -362,9 +361,9 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
                 
                 // Replace UIAlertActionStyle.Default by UIAlertActionStyle.default
                 
-                let declineAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                let declineAction = UIAlertAction(title: "Decline", style: UIAlertActionStyle.default) {
                     (result : UIAlertAction) -> Void in
-                    print("Decline")
+                    Utilities.print("Decline")
                     self.appDelegate.mpcManager.invitationHandler(false, self.appDelegate.mpcManager.session)
                 }
                 
@@ -385,18 +384,18 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     func connectedWithPeer(_ peerID: MCPeerID) {
         OperationQueue.main.addOperation { () -> Void in
 //            self.performSegueWithIdentifier(MAINGAME_VC_SEGUE, sender: self)
-            print("\(peerID.displayName),peercount-\(self.appDelegate.mpcManager.foundPeers.count)")
+            Utilities.print("\(peerID.displayName),peercount-\(self.appDelegate.mpcManager.foundPeers.count)")
             
-            print("Invitiation status-\(self.appDelegate.mpcManager.invitationHandler)")
+            Utilities.print("Invitiation status-\(self.appDelegate.mpcManager.invitationHandler)")
             
             if !self.appDelegate.mpcManager.foundPeers.contains(peerID)
             {
                self.appDelegate.mpcManager.foundPeers.append(peerID)
             }
             
-            print("new count-\(self.appDelegate.mpcManager.foundPeers.count)")
+            Utilities.print("new count-\(self.appDelegate.mpcManager.foundPeers.count)")
             
-             print("Peer list-\(self.appDelegate.mpcManager.foundPeers)")
+             Utilities.print("Peer list-\(self.appDelegate.mpcManager.foundPeers)")
             
             if self.userType == "Host"
             {
@@ -421,7 +420,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
         let state = receivedDataDictionary["state"] as! Int
         let peerID = receivedDataDictionary["peerID"] as! MCPeerID
         
-        print("Notified-\(peerID.displayName)==\(self.appDelegate.mpcManager.peer.displayName)")
+        Utilities.print("Notified-\(peerID.displayName)==\(self.appDelegate.mpcManager.peer.displayName)")
         
         var message:String = ""
         switch state{
@@ -432,7 +431,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
             
             invitationRequest = false
             message = "Your invitation has been accepted. Waiting for player to start the game. Do not cancel."
-            print("\(peerID.displayName)-Connected to session: \(self.appDelegate.mpcManager.session)")
+            Utilities.print("\(peerID.displayName)-Connected to session: \(self.appDelegate.mpcManager.session)")
             
             if !self.appDelegate.mpcManager.foundPeers.contains(peerID)
             {
@@ -453,9 +452,9 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
                 self.present(inviteAlert, animated: true, completion: nil)
             }
             
-            print("new count-\(self.appDelegate.mpcManager.foundPeers.count)")
+            Utilities.print("new count-\(self.appDelegate.mpcManager.foundPeers.count)")
             
-            print("Peer list-\(self.appDelegate.mpcManager.foundPeers)")
+            Utilities.print("Peer list-\(self.appDelegate.mpcManager.foundPeers)")
             
             if self.userType == "Host"
             {
@@ -471,10 +470,10 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
             
         case MCSessionState.connecting.rawValue:
             invitationRequest = false
-            print(Utilities.filterString(peerID.displayName)+"-Connecting to session: \(self.appDelegate.mpcManager.session)")
+            Utilities.print(Utilities.filterString(peerID.displayName)+"-Connecting to session: \(self.appDelegate.mpcManager.session)")
             
         default:
-            print("Session State:\(state)-Disconnected")
+            Utilities.print("Session State:\(state)-Disconnected")
             if statusType == "Connecting"
             {
             
@@ -494,7 +493,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
                 self.updatePlayers()
             }
            
-            print("\(peerID.displayName)-Did not connect to session: \(self.appDelegate.mpcManager.session)")
+            Utilities.print("\(peerID.displayName)-Did not connect to session: \(self.appDelegate.mpcManager.session)")
             
                 inviteAlert = UIAlertController(title: "Message", message: message, preferredStyle: UIAlertControllerStyle.alert)
                 

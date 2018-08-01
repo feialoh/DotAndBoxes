@@ -44,7 +44,7 @@ class FinalScoreView: UIView,UITableViewDelegate,UITableViewDataSource {
     init(frame: CGRect, playerDetails: [[String:AnyObject]], parentView:UIView)
     {
         
-         print("\(playerDetails)")
+         Utilities.print("\(playerDetails)")
         
         self.playerInfo = playerDetails
         

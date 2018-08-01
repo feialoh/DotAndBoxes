@@ -72,7 +72,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         
         if session == nil
         {
-            session = MCSession(peer: peer)
+            session = MCSession(peer: peer, securityIdentity: nil, encryptionPreference: .optional)
 
         }
 
@@ -108,7 +108,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     
     func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
-        print(error.localizedDescription)
+        Utilities.print(error.localizedDescription)
     }
     
     
@@ -133,7 +133,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     }
     */
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
-        print(error.localizedDescription)
+        Utilities.print(error.localizedDescription)
     }
     
     
@@ -176,7 +176,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         
 
 //        if !session.sendData(dataToSend, toPeers: peersArray, withMode: MCSessionSendDataMode.Reliable, error: &error) {
-//            print(error?.localizedDescription)
+//            Utilities.print(error?.localizedDescription)
 //            return false
 //        }
         

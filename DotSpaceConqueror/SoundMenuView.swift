@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class SoundMenuView: UIView,SaveButtonDelegate {
+class SoundMenuView: UIView,SaveButtonDelegate,UITableViewDataSource,UITableViewDelegate {
 
     
     var view: UIView!
@@ -50,7 +50,6 @@ class SoundMenuView: UIView,SaveButtonDelegate {
         musicTable.register(UINib(nibName: "SoundMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "soundMenuCell")
         musicTable.estimatedRowHeight = 150
         musicTable.rowHeight = UITableViewAutomaticDimension
-        print("\(audioPlayer.isPlaying)")
         if !audioPlayer.isPlaying
         {
             playGameThemeSong()
@@ -86,7 +85,7 @@ class SoundMenuView: UIView,SaveButtonDelegate {
             soundData = ["music":[0,0], "sound":true, "volume":0.5]
         }
         
-        print("\(soundData)")
+        Utilities.print("\(soundData)")
         soundStatus = soundData["sound"] as! Bool
         var newIndex = soundData["music"] as! [Int]
         if let vol = soundData["volume"] as? Double
@@ -120,7 +119,7 @@ class SoundMenuView: UIView,SaveButtonDelegate {
             selection = lastSelectedIndexPath
         }
         soundData = ["music":[(selection as NSIndexPath).row,(selection as NSIndexPath).section], "sound":soundStatus, "volume":soundSlider.value]
-         print("\(soundData)")
+         Utilities.print("\(soundData)")
         Utilities.storeDataToDefaults(self.valueStoreKey, data: soundData as AnyObject)
     }
     
@@ -178,14 +177,14 @@ class SoundMenuView: UIView,SaveButtonDelegate {
             soundSlider.value  = audioPlayer.volume
             audioPlayer.play()
         } else {
-            print("audio file is not found")
+            Utilities.print("audio file is not found")
         }
         
     }
     
     //MARK:- UITableView DataSource
     
-    func numberOfSectionsInTableView(_ tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
@@ -200,7 +199,7 @@ class SoundMenuView: UIView,SaveButtonDelegate {
     
     
     
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //SoundMenuView - SliderView
 //        let tableCell = Utilities.loadViewFromNib("SliderView", atIndex: 1, aClass: self.dynamicType,parent:self) as? UITableViewCell ?? UITableViewCell(style: .Subtitle,reuseIdentifier: "cell")
@@ -226,7 +225,7 @@ class SoundMenuView: UIView,SaveButtonDelegate {
     }
     
 
-    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if (indexPath as NSIndexPath).row != (lastSelectedIndexPath as NSIndexPath?)?.row {

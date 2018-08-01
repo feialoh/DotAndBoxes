@@ -125,11 +125,11 @@ class SidePanelViewController: UIViewController, UIImagePickerControllerDelegate
         
         if image == nil {
             
-            print("missing image at: \(path)")
+            Utilities.print("missing image at: \(path)")
             
             image = UIImage(named: "dummyProPic")
         }
-        print("Loading image from path: \(path)")
+        Utilities.print("Loading image from path: \(path)")
         return image
         
     }

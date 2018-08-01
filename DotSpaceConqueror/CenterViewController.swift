@@ -71,7 +71,7 @@ class CenterViewController: UIViewController {
 //        multiplayerButton.titleLabel!.adjustsFontSizeToFitWidth = true
 //        multiplayerButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByClipping
         
-       print("\(singlePlayerButton.frame.size.width)-(\(singlePlayerButton.frame.size.height))-\( singlePlayerButton.layer.cornerRadius)")
+       Utilities.print("\(singlePlayerButton.frame.size.width)-(\(singlePlayerButton.frame.size.height))-\( singlePlayerButton.layer.cornerRadius)")
         
 //        singlePlayerButton.titleLabel!.font =  Utilities.myFontWithSize(FONT_SIZE)
 //        multiplayerButton.titleLabel!.font =  Utilities.myFontWithSize(FONT_SIZE)
@@ -86,7 +86,7 @@ class CenterViewController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
-//        print("\(#function)-\(singlePlayerButton.frame.size.width)-(\(singlePlayerButton.frame.size.height))-\( singlePlayerButton.layer.cornerRadius)")
+//        Utilities.print("\(#function)-\(singlePlayerButton.frame.size.width)-(\(singlePlayerButton.frame.size.height))-\( singlePlayerButton.layer.cornerRadius)")
         super.viewDidLayoutSubviews()
 
         
@@ -116,7 +116,7 @@ class CenterViewController: UIViewController {
 
     @IBAction func singlePlayerButtonAction(_ sender: UIButton)
     {
-//         print("\(singlePlayerButton.frame.size.width)-(\(singlePlayerButton.frame.size.height))-\( singlePlayerButton.layer.cornerRadius)")
+//         Utilities.print("\(singlePlayerButton.frame.size.width)-(\(singlePlayerButton.frame.size.height))-\( singlePlayerButton.layer.cornerRadius)")
         Analytics.logEvent("single_player", parameters: nil)
         
         gameType = "Single"
@@ -169,7 +169,7 @@ class CenterViewController: UIViewController {
     
     @objc func menuButtonPressed()
     {
-        print("Menu button was pressed")
+        Utilities.print("Menu button was pressed")
         //        dispatch_async(dispatch_get_main_queue(), { () -> Void in
         self.delegate!.toggleLeftPanel()
         //        })
@@ -254,7 +254,7 @@ class CenterViewController: UIViewController {
             //show details
             
             settingsDetails = Utilities.getDefaultValue(SETTINGS) as! Dictionary<String,Any>
-//            print("\(settingsDetails)")  
+//            Utilities.print("\(settingsDetails)")  
             
         }
         else
@@ -299,7 +299,7 @@ class CenterViewController: UIViewController {
             audioPlayer.volume = volume
             audioPlayer.play()
         } else {
-            print("audio file is not found")
+            Utilities.print("audio file is not found")
         }
         
     }
@@ -311,7 +311,7 @@ extension CenterViewController: SidePanelViewControllerDelegate  {
 //        imageView.image = MenuItems.image
 //        titleLabel.text = MenuItems.title
 //        creatorLabel.text = MenuItems.creator
-        print("\(menuItems.title)")
+        Utilities.print("\(menuItems.title)")
         
         currentSelection = menuItems.title
         initializeValues()
@@ -320,7 +320,7 @@ extension CenterViewController: SidePanelViewControllerDelegate  {
         
         case PLAY_GAME:
             
-//            print("\(self.view.subviews)")
+//            Utilities.print("\(self.view.subviews)")
 //            self.view.bringSubviewToFront(self.playGameBg)
 //            self.view.bringSubviewToFront(self.playGameView)
             removeViewIfExists(ChooseDotAndPlayers.classForCoder())
@@ -408,7 +408,7 @@ extension CenterViewController: SidePanelViewControllerDelegate  {
     {
 
         
-//        print("\(myView)")
+//        Utilities.print("\(myView)")
         for element in self.view.subviews
         {
             if element.isKind(of: myView)

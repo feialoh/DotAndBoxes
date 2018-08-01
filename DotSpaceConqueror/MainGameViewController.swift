@@ -118,7 +118,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     func EGCAuthentified(_ authentified:Bool) {
         
         Utilities.hideMyActivityIndicator()
-        print("\n[MainViewController] Player Authentified = \(authentified)\n")
+        Utilities.print("\n[MainViewController] Player Authentified = \(authentified)\n")
         
         if authentified
         {
@@ -129,7 +129,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             EGC.showGameCenterAuthentication({
                 (resultOpenGameCenter) -> Void in
                 
-                print("\n[MainViewController] Show Game Center\n")
+                Utilities.print("\n[MainViewController] Show Game Center\n")
             })
 
         }
@@ -178,15 +178,15 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     {
         currentObserver = cObserver
 //        appDelegate.mpcManager.delegate = self
-        print("GAMEDETAILS:\(gameDetails)")
+        Utilities.print("GAMEDETAILS:\(gameDetails)")
         
-        print("mpcManager:\(appDelegate.mpcManager.peer)")
+        Utilities.print("mpcManager:\(appDelegate.mpcManager.peer)")
         
         arrConnectedDevices.append(appDelegate.mpcManager.peer)
         noOfPlayers = []
         noOfPlayers.append(PlayerDetail.init(playerID: appDelegate.mpcManager.peer, playerName: appDelegate.mpcManager.peer.displayName)!)
 
-        print("Connected=\(appDelegate.mpcManager.session.connectedPeers)")
+        Utilities.print("Connected=\(appDelegate.mpcManager.session.connectedPeers)")
         
         for connectedPeer in appDelegate.mpcManager.session.connectedPeers
         {
@@ -196,7 +196,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         
         noOfPlayers.sort(by: { $0.playerName.compare($1.playerName) == .orderedAscending })
         
-        print("noOfPlayers=\(noOfPlayers)-\(noOfPlayers.count)")
+        Utilities.print("noOfPlayers=\(noOfPlayers)-\(noOfPlayers.count)")
         
         player = noOfPlayers[0].playerID
         
@@ -261,7 +261,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         dataToSend = ["tag":sender.tag as AnyObject, "player":appDelegate.mpcManager.peer.displayName as AnyObject,"id":appDelegate.mpcManager.peer]
         
         
-        print("DataToSend-\(dataToSend)")
+        Utilities.print("DataToSend-\(dataToSend)")
         
         if(gameType == "Single")
         {
@@ -293,7 +293,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                     DispatchQueue.main.async(execute: {
                         self.present(Utilities.showAlertViewMessageAndTitle("No other players in session", title: "Error", delegate: [], cancelButtonTitle: "OK"), animated: true, completion: nil)
                     })
-                    print("error: \(String(describing: error?.localizedDescription))")
+                    Utilities.print("error: \(String(describing: error?.localizedDescription))")
                     Utilities.hideMyActivityIndicator()
                     setPlayerInteractionStatus(true)
                 }
@@ -320,7 +320,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     
     func resetButtonAction()
     {
-//        print("Before:\(self.view.subviews)")
+//        Utilities.print("Before:\(self.view.subviews)")
         
 //        for element in self.view.subviews
 //        {
@@ -351,12 +351,12 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             }
             else
             {
-                print("Tag=\(viewItem.tag)")
+                Utilities.print("Tag=\(viewItem.tag)")
             }
         }
 
         
-        print("Count=\(self.view.subviews.count)")
+        Utilities.print("Count=\(self.view.subviews.count)")
         
         if( gameType == "Mutliplayer")
         {
@@ -370,7 +370,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             
             selfTurn = true
             playerChange = true
-            print("ivalue=\(iValue),playindex=\(playerPlayIndex)")
+            Utilities.print("ivalue=\(iValue),playindex=\(playerPlayIndex)")
             colorValue = 0
             noOfPlayers.sort(by: { $0.playerName.compare($1.playerName) == .orderedAscending })
             
@@ -634,25 +634,25 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         scaleFactor = 40
         
        /* // Logs
-        print("Horizontal Array\n")
+        Utilities.print("Horizontal Array\n")
         for index in 0...horizontalArray.count-1
         {
             var temp:ButtonDetail?
             
             temp = horizontalArray[index]
-            print("[\(temp!.btnId)-\(temp!.startEnd)-\(temp!.btnActive)]")
+            Utilities.print("[\(temp!.btnId)-\(temp!.startEnd)-\(temp!.btnActive)]")
         }
         
-        print("Vertical Array\n")
+        Utilities.print("Vertical Array\n")
         for index in 0...verticalArray.count-1
         {
             var temp:ButtonDetail?
             
             temp = verticalArray[index]
-            print("[\(temp!.btnId)-\(temp!.startEnd)-\(temp!.btnActive)]")
+            Utilities.print("[\(temp!.btnId)-\(temp!.startEnd)-\(temp!.btnActive)]")
         }
         
-        print("View Array\n")
+        Utilities.print("View Array\n")
         for index in 0...viewArray.count-1
         {
             var temp:ViewDetail?
@@ -660,11 +660,11 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             
             
             temp = viewArray[index]
-            print("[\(temp!.viewId)-\(temp!.xy)-\(temp!.activeStatus.count)-\(temp!.viewDisplay)-\(temp!.currentPlayer)]")
+            Utilities.print("[\(temp!.viewId)-\(temp!.xy)-\(temp!.activeStatus.count)-\(temp!.viewDisplay)-\(temp!.currentPlayer)]")
             
                 for element in temp!.activeStatus
                 {
-                    print("\(index+1)==\(element)")
+                    Utilities.print("\(index+1)==\(element)")
                 }
         }
     */
@@ -686,7 +686,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
 
         
         
-        print("MARKED BUTTON TAG:\(sender.tag)");
+        Utilities.print("MARKED BUTTON TAG:\(sender.tag)");
         
 //        let scaleFactor:CGFloat = (viewWidthHeight/((3*CGFloat(noOfDots!))-2))
 //        
@@ -697,7 +697,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
 //        path.addLineToPoint(CGPointMake(290.0, 10.0))
 //        path.lineWidth = 5*0.5*(11-CGFloat(noOfDots!))
 //        
-//        print("LINE WIDTH:\(path.lineWidth) for \(noOfDots) Dots")
+//        Utilities.print("LINE WIDTH:\(path.lineWidth) for \(noOfDots) Dots")
 //        
 //        let dashes = [path.lineWidth, path.lineWidth * 2]
 //        path.setLineDash(dashes, count: 2, phase: 0)
@@ -757,7 +757,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         
         if (!selfTurn && gameType == "Single")
         {
-            print("CPU is going to play")
+            Utilities.print("CPU is going to play")
             
             Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(MainGameViewController.playForCpu), userInfo: nil, repeats: false)
         }
@@ -870,7 +870,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                     
                 }
                 
-                print("\(playerTitle),\(String(describing: logArray))");
+//                Utilities.print("\(playerTitle),\(String(describing: logArray))");
                 
                 
                 
@@ -888,7 +888,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     
     @objc func showScoreAlert(_ timer:Timer)
     {
-//        print("\(timer.userInfo)")
+//        Utilities.print("\(timer.userInfo)")
         
         var playerInfo =  timer.userInfo as! [[String:AnyObject]]
         
@@ -899,7 +899,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             return date1 > date2
         }
         
-        print("\(playerInfo)")
+//        Utilities.print("\(playerInfo)")
         
         
         let finalAlert:FinalScoreView = FinalScoreView.init(frame: CGRect(x: 0,y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height), playerDetails: playerInfo, parentView:self.view)
@@ -1057,7 +1057,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             selfTurn = true
         
             setPlayerInteractionStatus(true)
-            print("CPU HAS SELECTED:\(cpuSelect)")
+            Utilities.print("CPU HAS SELECTED:\(cpuSelect)")
             markLineAction(cpuSelect)
         
     }
@@ -1105,7 +1105,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     
 //    func showAds()
 //    {
-//        print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
+//        Utilities.print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
 //        
 //        bannerView.adUnitID = AdUnitId
 //        bannerView.rootViewController = self
@@ -1262,7 +1262,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
     }
     
      var temp:ButtonDetail
-    print("CPU SELECTION:\(buttonArray[indx].0),\(buttonArray[indx].1)")
+    Utilities.print("CPU SELECTION:\(buttonArray[indx].0),\(buttonArray[indx].1)")
         
     for i in 0 ..< verticalArray.count
     {
@@ -1374,7 +1374,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
         var value = values
         for element in self.view.subviews
         {
-            print(element)
+            Utilities.print(element)
             if element.isKind(of: FinalScoreView.classForCoder())
             {
                value = true
@@ -1403,7 +1403,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
     {
         for element in noOfPlayers
         {
-            print("\(element.playerName)=\(element.playerReadyStatus)")
+            Utilities.print("\(element.playerName)=\(element.playerReadyStatus)")
         }
     }
     
@@ -1430,7 +1430,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
         }
 //        for element in noOfPlayers
 //        {
-//            print("\(element.playerName)=\(element.playerReadyStatus)")
+//            Utilities.print("\(element.playerName)=\(element.playerReadyStatus)")
 //        }
     }
     
@@ -1456,7 +1456,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
                 DispatchQueue.main.async(execute: {
                     self.present(Utilities.showAlertViewMessageAndTitle("No other players in session", title: "Error", delegate: nil, cancelButtonTitle: "OK"), animated: true, completion: nil)
                 })
-                print("error: \(String(describing: error?.localizedDescription))")
+                Utilities.print("error: \(String(describing: error?.localizedDescription))")
             }
             else
             {
@@ -1485,13 +1485,13 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
      */
     /*
     func EGCMatchStarted() {
-        print("\n[MultiPlayerActions] MatchStarted")
+        Utilities.print("\n[MultiPlayerActions] MatchStarted")
         
         noOfPlayers = []
         
         if let players = EGC.getPlayerInMatch() {
             for player in players{
-                print(player.alias)
+                Utilities.print(player.alias)
                 noOfPlayers.append(PlayerDetail.init(playerID: MCPeerID.init(displayName: player.alias!), playerName: player.alias!)!)
             }
         }
@@ -1513,9 +1513,9 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
         
         // See Packet
         let autre =  Packet.unarchive(data)
-        print("\n[MultiPlayerActions] Recept From player = \(playerID)")
-        print("\n[MultiPlayerActions] Recept Packet.name = \(autre.name)")
-        print("\n[MultiPlayerActions] Recept Packet.index = \(autre.index)")
+        Utilities.print("\n[MultiPlayerActions] Recept From player = \(playerID)")
+        Utilities.print("\n[MultiPlayerActions] Recept Packet.name = \(autre.name)")
+        Utilities.print("\n[MultiPlayerActions] Recept Packet.index = \(autre.index)")
         
 //        self.TextLabel.text = "Recept Date From \(playerID)"
     }
@@ -1523,14 +1523,14 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
      Match End / Error (No NetWork example), Delegate Func of Easy Game Center
      */
     func EGCMatchEnded() {
-        print("\n[MultiPlayerActions] MatchEnded")
+        Utilities.print("\n[MultiPlayerActions] MatchEnded")
 //        self.TextLabel.text = "Match Ended !"
     }
     /**
      Match Cancel, Delegate Func of Easy Game Center
      */
     func EGCMatchCancel() {
-        print("\n[MultiPlayerActions] Match cancel")
+        Utilities.print("\n[MultiPlayerActions] Match cancel")
     }
 
     */
