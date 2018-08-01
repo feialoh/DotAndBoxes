@@ -50,11 +50,16 @@ class SoundMenuView: UIView,SaveButtonDelegate,UITableViewDataSource,UITableView
         musicTable.register(UINib(nibName: "SoundMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "soundMenuCell")
         musicTable.estimatedRowHeight = 150
         musicTable.rowHeight = UITableViewAutomaticDimension
-        if !audioPlayer.isPlaying
-        {
-            playGameThemeSong()
-        }
         
+       if let audioPlayer = SoundManager.sharedInstance.audioPlayer
+       {
+            if !audioPlayer.isPlaying
+            {
+                playGameThemeSong()
+            }
+        }
+       
+     
         addSubview(self.view)
         
     }
@@ -133,8 +138,8 @@ class SoundMenuView: UIView,SaveButtonDelegate,UITableViewDataSource,UITableView
         {
             
             soundSlider.setValue(0.0, animated: true)
-            audioPlayer.stop()
-            audioPlayer.currentTime = 0;
+            SoundManager.sharedInstance.audioPlayer?.stop()
+            SoundManager.sharedInstance.audioPlayer?.currentTime = 0;
             soundStatus = false
             soundSlider.isUserInteractionEnabled = false
             
@@ -153,7 +158,7 @@ class SoundMenuView: UIView,SaveButtonDelegate,UITableViewDataSource,UITableView
     
     @IBAction func soundSlideAction(_ sender: UISlider)
     {
-        audioPlayer.volume = sender.value
+        SoundManager.sharedInstance.audioPlayer?.volume = sender.value
         volume = sender.value
 //        soundButton.selected = (sender.value == 0)
     }
@@ -167,18 +172,24 @@ class SoundMenuView: UIView,SaveButtonDelegate,UITableViewDataSource,UITableView
         {
             selectedItem = lastSelectedIndexPath.row
         }
-        let audioFilePath = Bundle.main.path(forResource: menus[selectedItem].title, ofType: "mp3")
-        if audioFilePath != nil {
-            let audioFileUrl = URL(fileURLWithPath: audioFilePath!)
-            try! audioPlayer = AVAudioPlayer(contentsOf: audioFileUrl, fileTypeHint: nil)
-            audioPlayer.numberOfLoops = -1
-            audioPlayer.prepareToPlay()
-            audioPlayer.volume = volume
-            soundSlider.value  = audioPlayer.volume
-            audioPlayer.play()
-        } else {
-            Utilities.print("audio file is not found")
-        }
+        
+//        guard let audioPlayer = SoundManager.sharedInstance.audioPlayer else { return }
+        
+        SoundManager.sharedInstance.playSong(fileName: menus[selectedItem].title, fileType: "mp3", volume: volume)
+        soundSlider.value = volume
+        
+//        let audioFilePath = Bundle.main.path(forResource: menus[selectedItem].title, ofType: "mp3")
+//        if audioFilePath != nil {
+//            let audioFileUrl = URL(fileURLWithPath: audioFilePath!)
+//            try! audioPlayer = AVAudioPlayer(contentsOf: audioFileUrl, fileTypeHint: nil)
+//            audioPlayer.numberOfLoops = -1
+//            audioPlayer.prepareToPlay()
+//            audioPlayer.volume = volume
+//            soundSlider.value  = audioPlayer.volume
+//            audioPlayer.play()
+//        } else {
+//            Utilities.print("audio file is not found")
+//        }
         
     }
     

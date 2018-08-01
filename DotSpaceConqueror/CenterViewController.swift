@@ -21,8 +21,6 @@ protocol SaveButtonDelegate {
     
 }
 
-var audioPlayer = AVAudioPlayer()
-
 class CenterViewController: UIViewController {
 
     
@@ -254,7 +252,7 @@ class CenterViewController: UIViewController {
             //show details
             
             settingsDetails = Utilities.getDefaultValue(SETTINGS) as! Dictionary<String,Any>
-//            Utilities.print("\(settingsDetails)")  
+//            Utilities.print("\(settingsDetails)")
             
         }
         else
@@ -264,9 +262,9 @@ class CenterViewController: UIViewController {
         
         if Utilities.checkValueForKey(SOUND)
         {
-  
+
             soundDetails = Utilities.getDefaultValue(SOUND) as! Dictionary<String,Any>
-          
+
         }
         else
         {
@@ -284,24 +282,14 @@ class CenterViewController: UIViewController {
     
     
     func playSong(){
-        
+
         menus = SoundMenuItems.allSoundMenu()
         var newIndex = soundDetails["music"] as! [Int]
         let volume = soundDetails["volume"] as! Float
         let selectedIndexPath = IndexPath(row: newIndex[0], section: newIndex[1])
-
-        let audioFilePath = Bundle.main.path(forResource: menus[(selectedIndexPath as NSIndexPath).row].title, ofType: "mp3")
-        if audioFilePath != nil {
-            let audioFileUrl = URL(fileURLWithPath: audioFilePath!)
-            try! audioPlayer = AVAudioPlayer(contentsOf: audioFileUrl, fileTypeHint: nil)
-            audioPlayer.numberOfLoops = -1
-            audioPlayer.prepareToPlay()
-            audioPlayer.volume = volume
-            audioPlayer.play()
-        } else {
-            Utilities.print("audio file is not found")
-        }
         
+        SoundManager.sharedInstance.playSong(fileName: menus[(selectedIndexPath as NSIndexPath).row].title, fileType: "mp3", volume:volume)
+
     }
     
 }

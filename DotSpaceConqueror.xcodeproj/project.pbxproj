@@ -10,6 +10,7 @@
 		29E4467298DCE43454267285 /* Pods_DotSpaceConquerorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10785400A8CA47937145B060 /* Pods_DotSpaceConquerorTests.framework */; };
 		325D5A58F147BAC66AA54503 /* Pods_DotSpaceConqueror.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA362334EEEF2DB02A3CEFCE /* Pods_DotSpaceConqueror.framework */; };
 		359D995021105A91000D50EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 359D994F21105A90000D50EA /* GoogleService-Info.plist */; };
+		359D995321118D0F000D50EA /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D995221118D0F000D50EA /* SoundManager.swift */; };
 		6018E4511C0B23D700E31F13 /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6018E44F1C0B23D700E31F13 /* SidePanelViewController.swift */; };
 		6018E4521C0B23D700E31F13 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6018E4501C0B23D700E31F13 /* MenuItems.swift */; };
 		6018E4541C0B249D00E31F13 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6018E4531C0B249D00E31F13 /* ContainerViewController.swift */; };
@@ -80,6 +81,7 @@
 		07D9DA42F57E274F2C248D7D /* Pods-DotSpaceConqueror.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotSpaceConqueror.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotSpaceConqueror/Pods-DotSpaceConqueror.release.xcconfig"; sourceTree = "<group>"; };
 		10785400A8CA47937145B060 /* Pods_DotSpaceConquerorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotSpaceConquerorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359D994F21105A90000D50EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		359D995221118D0F000D50EA /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		49CB10845615AA3ED0DE8B54 /* Pods_DotSpaceConquerorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotSpaceConquerorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6018E44F1C0B23D700E31F13 /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		6018E4501C0B23D700E31F13 /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			children = (
 				C83E391D1BD607E10048517D /* Constants.swift */,
 				C835A6861C0C4F95007EC781 /* Utilities.swift */,
+				359D995221118D0F000D50EA /* SoundManager.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				C82412841BD4C37800B788B2 /* CenterViewController.swift in Sources */,
 				6018E4561C0B379600E31F13 /* ChooseDotsAndPlayers.swift in Sources */,
 				602780131C19385C00242408 /* SoundMenuView.swift in Sources */,
+				359D995321118D0F000D50EA /* SoundManager.swift in Sources */,
 				60FBFE6F1C12F23F002C84ED /* SettingsView.swift in Sources */,
 				C85686011C47A0CC00986D25 /* SoundMenuTableViewCell.swift in Sources */,
 				C8A034711BFF00FB00EC96E1 /* MainGameViewController.swift in Sources */,

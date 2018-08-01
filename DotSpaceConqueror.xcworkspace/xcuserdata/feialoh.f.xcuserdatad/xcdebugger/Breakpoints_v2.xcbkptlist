@@ -10,12 +10,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DotSpaceConqueror/MainGameViewController.swift"
-            timestampString = "554797048.625937"
+            timestampString = "554807952.881354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "905"
             endingLineNumber = "905"
             landmarkName = "showScoreAlert(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DotSpaceConqueror/SoundManager.swift"
+            timestampString = "554807952.8814501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "SoundManager"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_8CEBD424C337B01841E64EF43EB9B1EF_func0"
+                  moduleName = "DotSpaceConqueror"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/feialoh.f/Workspace/ios-workspace/My%20iOS%20Projects/GitHub/DotAndBoxes/DotSpaceConqueror/SoundManager.swift"
+                  timestampString = "554807541.664113"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DotSpaceConqueror.SoundManager.sharedInstance.unsafeMutableAddressor : DotSpaceConqueror.SoundManager"
+                  moduleName = "DotSpaceConqueror"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/feialoh.f/Workspace/ios-workspace/My%20iOS%20Projects/GitHub/DotAndBoxes/DotSpaceConqueror/SoundManager.swift"
+                  timestampString = "554807541.673444"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static DotSpaceConqueror.SoundManager.sharedInstance.getter : DotSpaceConqueror.SoundManager"
+                  moduleName = "DotSpaceConqueror"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/feialoh.f/Workspace/ios-workspace/My%20iOS%20Projects/GitHub/DotAndBoxes/DotSpaceConqueror/SoundManager.swift"
+                  timestampString = "554807541.679585"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DotSpaceConqueror/SoundManager.swift"
+            timestampString = "554807952.881606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "playSong(fileName:fileType:volume:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
