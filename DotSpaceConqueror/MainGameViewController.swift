@@ -538,7 +538,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         //check iphone or ipad and set margin
         if UIDevice.current.userInterfaceIdiom == .pad
         {
-            margin = 200
+            margin = 150
         }
         else
         {
@@ -551,7 +551,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         x = (UIScreen.main.bounds.size.width-viewWidthHeight)/2
 //        y = (UIScreen.main.bounds.size.height-viewWidthHeight)/2
         
-        y = playerTurn.frame.origin.y + playerTurn.frame.size.height + MARGIN - 20
+        y = playerTurn.frame.origin.y + playerTurn.frame.size.height
         
         
        

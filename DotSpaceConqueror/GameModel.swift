@@ -70,11 +70,11 @@ class PlayerDetail{
         self.playerName = playerName
         
         var colorArray: [UIColor] = []
-        colorArray.append(Utilities.ColorCodeRGB(0xC74A4A))
-        colorArray.append(Utilities.ColorCodeRGB(0xFFAE00))
-        colorArray.append(Utilities.ColorCodeRGB(0xD44A06))
-        colorArray.append(Utilities.ColorCodeRGB(0x485703))
-        colorArray.append(Utilities.ColorCodeRGB(0xcc00ff))
+        colorArray.append(Utilities.ColorCodeRGB(0x00D0FF)) //Blue Shade
+        colorArray.append(Utilities.ColorCodeRGB(0xFFAE00)) //Yellow Shade
+        colorArray.append(Utilities.ColorCodeRGB(0xD44A06)) //Orange Shade
+        colorArray.append(Utilities.ColorCodeRGB(0x9EF704)) //Green Shade
+        colorArray.append(Utilities.ColorCodeRGB(0xCC00FF)) //Violet Shade
         
         self.color = colorArray
     }
