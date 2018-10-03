@@ -39,7 +39,7 @@ class ChooseDotAndPlayers: UIView {
         
         self.selectedNo = selectedNo
         self.valueStoreKey = type
-        self.view = Utilities.loadViewFromNib("ChooseDotsAndPlayers", atIndex: 0, aClass: Swift.type(of: self),parent:self) as! UIView
+        self.view = Utilities.loadViewFromNib("ChooseDotsAndPlayers", atIndex: 0, aClass: Swift.type(of: self),parent:self) as? UIView
         self.view.frame = frame
         self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         

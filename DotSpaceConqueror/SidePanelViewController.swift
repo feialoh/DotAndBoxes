@@ -70,7 +70,7 @@ class SidePanelViewController: UIViewController, UIImagePickerControllerDelegate
     if Utilities.checkValueForKey(SETTINGS)
     {
         //show details
-        settingsDetails = Utilities.getDefaultValue(SETTINGS) as! Dictionary<String,Any>
+        settingsDetails = Utilities.getDefaultValue(SETTINGS) as? Dictionary<String,Any>
         
     }
     else

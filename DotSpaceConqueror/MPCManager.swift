@@ -67,7 +67,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }
         else
         {
-            peer = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.data(forKey: PEER_ID)!) as! MCPeerID
+            peer = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.data(forKey: PEER_ID)!) as? MCPeerID
         }
         
         if session == nil

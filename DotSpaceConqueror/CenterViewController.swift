@@ -251,7 +251,7 @@ class CenterViewController: UIViewController {
         {
             //show details
             
-            settingsDetails = Utilities.getDefaultValue(SETTINGS) as! Dictionary<String,Any>
+            settingsDetails = Utilities.getDefaultValue(SETTINGS) as? Dictionary<String,Any>
 //            Utilities.print("\(settingsDetails)")
             
         }
@@ -263,7 +263,7 @@ class CenterViewController: UIViewController {
         if Utilities.checkValueForKey(SOUND)
         {
 
-            soundDetails = Utilities.getDefaultValue(SOUND) as! Dictionary<String,Any>
+            soundDetails = Utilities.getDefaultValue(SOUND) as? Dictionary<String,Any>
 
         }
         else

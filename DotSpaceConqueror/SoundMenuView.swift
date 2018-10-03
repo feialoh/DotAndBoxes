@@ -82,7 +82,7 @@ class SoundMenuView: UIView,SaveButtonDelegate,UITableViewDataSource,UITableView
         {
             //show details
             
-            soundData = Utilities.getDefaultValue(self.valueStoreKey) as! Dictionary<String,Any>
+            soundData = Utilities.getDefaultValue(self.valueStoreKey) as? Dictionary<String,Any>
             
         }
         else
@@ -90,7 +90,7 @@ class SoundMenuView: UIView,SaveButtonDelegate,UITableViewDataSource,UITableView
             soundData = ["music":[0,0], "sound":true, "volume":0.5]
         }
         
-        Utilities.print("\(soundData)")
+        Utilities.print("\(String(describing: soundData))")
         soundStatus = soundData["sound"] as! Bool
         var newIndex = soundData["music"] as! [Int]
         if let vol = soundData["volume"] as? Double
@@ -124,7 +124,7 @@ class SoundMenuView: UIView,SaveButtonDelegate,UITableViewDataSource,UITableView
             selection = lastSelectedIndexPath
         }
         soundData = ["music":[(selection as NSIndexPath).row,(selection as NSIndexPath).section], "sound":soundStatus, "volume":soundSlider.value]
-         Utilities.print("\(soundData)")
+        Utilities.print("\(String(describing: soundData))")
         Utilities.storeDataToDefaults(self.valueStoreKey, data: soundData as AnyObject)
     }
     

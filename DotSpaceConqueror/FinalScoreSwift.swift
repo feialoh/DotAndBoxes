@@ -49,7 +49,7 @@ class FinalScoreView: UIView,UITableViewDelegate,UITableViewDataSource {
         self.playerInfo = playerDetails
         
         super.init(frame:frame)
-        self.view = Utilities.loadViewFromNib("FinalScoreView", atIndex: 0, aClass: type(of: self),parent:self) as! UIView
+        self.view = Utilities.loadViewFromNib("FinalScoreView", atIndex: 0, aClass: type(of: self),parent:self) as? UIView
         self.view.frame = frame
         self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         self.view.isHidden = true
@@ -144,7 +144,7 @@ class FinalScoreView: UIView,UITableViewDelegate,UITableViewDataSource {
         }
         else
         {
-            playerString = playerInfo[0]["player"] as! String
+            playerString = playerInfo[0]["player"] as? String
             winnerName  = Utilities.filterString(playerString) + " is the winner"
         }
         

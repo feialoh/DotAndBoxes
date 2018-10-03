@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0940"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6A7ED15B7E1F34111C77BF7D2F6E91A"
+               BlueprintIdentifier = "A7F707A915296514176198AD42183D0D"
                BuildableName = "Pods_DotSpaceConqueror.framework"
                BlueprintName = "Pods-DotSpaceConqueror"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E6A7ED15B7E1F34111C77BF7D2F6E91A"
+            BlueprintIdentifier = "A7F707A915296514176198AD42183D0D"
             BuildableName = "Pods_DotSpaceConqueror.framework"
             BlueprintName = "Pods-DotSpaceConqueror"
             ReferencedContainer = "container:Pods.xcodeproj">

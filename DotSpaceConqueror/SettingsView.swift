@@ -51,10 +51,10 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
         
         super.init(frame:frame)
         self.valueStoreKey = type
-        self.view = Utilities.loadViewFromNib("SettingsView", atIndex: 0, aClass: Swift.type(of: self),parent:self) as! UIView
+        self.view = Utilities.loadViewFromNib("SettingsView", atIndex: 0, aClass: Swift.type(of: self),parent:self) as? UIView
         self.view.frame = frame
         self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-        Utilities.print("\(scrollView)")
+        Utilities.print("\(String(describing: scrollView))")
         parent.saveDelegate = self
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "whitebg")!)
         addSubview(self.view)
@@ -68,8 +68,8 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
         {
            //show details
             
-            settingsData = Utilities.getDefaultValue(self.valueStoreKey) as! Dictionary<String,Any>
-            Utilities.print("\(settingsData)")
+            settingsData = Utilities.getDefaultValue(self.valueStoreKey) as? Dictionary<String,Any>
+            Utilities.print("\(String(describing: settingsData))")
             
             
         }
@@ -89,7 +89,7 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
         }
         
         playerRealName.text = settingsData["single"] as? String
-        Utilities.print("\(settingsData)")
+        Utilities.print("\(String(describing: settingsData))")
         var multiplayerNames:[String] = []
         multiplayerNames = (settingsData["multiplesame"] as? [String])!
         Utilities.print("\(multiplayerNames)")
@@ -99,7 +99,7 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
         player4Name.text = multiplayerNames[3]
         player5Name.text = multiplayerNames[4]
         
-        startStatus = settingsData["startFirst"] as! Bool
+        startStatus = settingsData["startFirst"] as? Bool
         playFirstSwitch.isOn = startStatus
     }
     

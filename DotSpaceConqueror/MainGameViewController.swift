@@ -183,7 +183,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
 //        appDelegate.mpcManager.delegate = self
         Utilities.print("GAMEDETAILS:\(gameDetails)")
         
-        Utilities.print("mpcManager:\(appDelegate.mpcManager.peer)")
+        Utilities.print("mpcManager:\(String(describing: appDelegate.mpcManager.peer))")
         
         arrConnectedDevices.append(appDelegate.mpcManager.peer)
         noOfPlayers = []
@@ -199,7 +199,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         
         noOfPlayers.sort(by: { $0.playerName.compare($1.playerName) == .orderedAscending })
         
-        Utilities.print("noOfPlayers=\(noOfPlayers)-\(noOfPlayers.count)")
+        Utilities.print("noOfPlayers=\(String(describing: noOfPlayers))-\(noOfPlayers.count)")
         
         player = noOfPlayers[0].playerID
         
@@ -264,7 +264,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
         dataToSend = ["tag":sender.tag as AnyObject, "player":appDelegate.mpcManager.peer.displayName as AnyObject,"id":appDelegate.mpcManager.peer]
         
         
-        Utilities.print("DataToSend-\(dataToSend)")
+        Utilities.print("DataToSend-\(String(describing: dataToSend))")
         
         if(gameType == "Single")
         {
@@ -1062,7 +1062,7 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             selfTurn = true
         
             setPlayerInteractionStatus(true)
-            Utilities.print("CPU HAS SELECTED:\(cpuSelect)")
+        Utilities.print("CPU HAS SELECTED:\(String(describing: cpuSelect))")
             markLineAction(cpuSelect)
         
     }
@@ -1403,7 +1403,17 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
     func resetPlayerStatus()
     {
 
-        noOfPlayers = noOfPlayers.map{ $0.playerReadyStatus = false; return $0}
+        noOfPlayers = noOfPlayers.map({ (player) -> PlayerDetail in
+            player.playerReadyStatus = false
+            return player
+        })
+        
+//        noOfPlayers = noOfPlayers.map { unwrappedNoOfPlayers in
+//            unwrappedNoOfPlayers.map { playerElement in
+//                playerElement.playerReadyStatus = false; return playerElement
+//            }
+//        }
+//        noOfPlayers = noOfPlayers.map{ $0.playerReadyStatus = false; return $0}
         
     }
     
@@ -1412,12 +1422,19 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
     
     func changeStatusForPlayer(_ readyPlayer:MCPeerID)
     {
-        noOfPlayers = noOfPlayers.map{ if $0.playerID == readyPlayer
-        {
-            $0.playerReadyStatus = true
+        noOfPlayers = noOfPlayers.map({ (player) -> PlayerDetail in
+            if player.playerID == readyPlayer {
+            player.playerReadyStatus = true
             }
-            return $0
-        }
+            return player
+        })
+        
+//        noOfPlayers = noOfPlayers.map{ if $0.playerID == readyPlayer
+//        {
+//            $0.playerReadyStatus = true
+//            }
+//            return $0
+//        }
 //        for element in noOfPlayers
 //        {
 //            Utilities.print("\(element.playerName)=\(element.playerReadyStatus)")

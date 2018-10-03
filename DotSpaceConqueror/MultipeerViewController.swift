@@ -93,7 +93,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
             appDelegate.mpcManager = MPCManager()
 //        }
         
-        Utilities.print("Session is =\(appDelegate.mpcManager.session)")
+        Utilities.print("Session is =\(String(describing: appDelegate.mpcManager.session))")
         
         appDelegate.mpcManager.delegate = self
         // Do any additional setup after loading the view.
@@ -161,7 +161,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     @IBAction func startGameAction(_ sender: UIButton) {
         
         Utilities.print("Connected players count-\(self.appDelegate.mpcManager.foundPeers.count)")
-        Utilities.print("SELF ID-\(self.appDelegate.mpcManager.peer)")
+        Utilities.print("SELF ID-\(String(describing: self.appDelegate.mpcManager.peer))")
         
         let messageDict = [NO_DOTS:dotNo,NO_PLAYERS:playerNos]
         
@@ -254,7 +254,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        Utilities.print("userType=\(userType)-request=\(invitationRequest)")
+        Utilities.print("userType=\(userType)-request=\(String(describing: invitationRequest))")
         if userType == "Guest" && invitationRequest == true
         {
             if appDelegate.mpcManager.foundPeers.count > 0
@@ -386,7 +386,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
 //            self.performSegueWithIdentifier(MAINGAME_VC_SEGUE, sender: self)
             Utilities.print("\(peerID.displayName),peercount-\(self.appDelegate.mpcManager.foundPeers.count)")
             
-            Utilities.print("Invitiation status-\(self.appDelegate.mpcManager.invitationHandler)")
+            Utilities.print("Invitiation status-\(String(describing: self.appDelegate.mpcManager.invitationHandler))")
             
             if !self.appDelegate.mpcManager.foundPeers.contains(peerID)
             {
@@ -431,7 +431,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
             
             invitationRequest = false
             message = "Your invitation has been accepted. Waiting for player to start the game. Do not cancel."
-            Utilities.print("\(peerID.displayName)-Connected to session: \(self.appDelegate.mpcManager.session)")
+                Utilities.print("\(peerID.displayName)-Connected to session: \(String(describing: self.appDelegate.mpcManager.session))")
             
             if !self.appDelegate.mpcManager.foundPeers.contains(peerID)
             {
@@ -470,7 +470,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
             
         case MCSessionState.connecting.rawValue:
             invitationRequest = false
-            Utilities.print(Utilities.filterString(peerID.displayName)+"-Connecting to session: \(self.appDelegate.mpcManager.session)")
+            Utilities.print(Utilities.filterString(peerID.displayName)+"-Connecting to session: \(String(describing: self.appDelegate.mpcManager.session))")
             
         default:
             Utilities.print("Session State:\(state)-Disconnected")
@@ -493,7 +493,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
                 self.updatePlayers()
             }
            
-            Utilities.print("\(peerID.displayName)-Did not connect to session: \(self.appDelegate.mpcManager.session)")
+                Utilities.print("\(peerID.displayName)-Did not connect to session: \(String(describing: self.appDelegate.mpcManager.session))")
             
                 inviteAlert = UIAlertController(title: "Message", message: message, preferredStyle: UIAlertControllerStyle.alert)
                 
