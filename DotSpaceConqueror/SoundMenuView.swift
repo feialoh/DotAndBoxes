@@ -44,12 +44,12 @@ class SoundMenuView: UIView,SaveButtonDelegate,UITableViewDataSource,UITableView
         self.valueStoreKey = type
         self.view =  loadViewFromNib()  //Utilities.loadViewFromNib("SoundMenuView", atIndex: 0, aClass: self.dynamicType,parent:self) as! UIView
         self.view.frame = frame
-        self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         parent.saveDelegate = self
         initializeMenu()
         musicTable.register(UINib(nibName: "SoundMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "soundMenuCell")
         musicTable.estimatedRowHeight = 150
-        musicTable.rowHeight = UITableViewAutomaticDimension
+        musicTable.rowHeight = UITableView.automaticDimension
         
        if let audioPlayer = SoundManager.sharedInstance.audioPlayer
        {

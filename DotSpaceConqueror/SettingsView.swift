@@ -53,7 +53,7 @@ class SettingsView: UIView,SaveButtonDelegate,UITextFieldDelegate {
         self.valueStoreKey = type
         self.view = Utilities.loadViewFromNib("SettingsView", atIndex: 0, aClass: Swift.type(of: self),parent:self) as? UIView
         self.view.frame = frame
-        self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         Utilities.print("\(String(describing: scrollView))")
         parent.saveDelegate = self
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "whitebg")!)

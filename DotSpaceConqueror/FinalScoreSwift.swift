@@ -51,7 +51,7 @@ class FinalScoreView: UIView,UITableViewDelegate,UITableViewDataSource {
         super.init(frame:frame)
         self.view = Utilities.loadViewFromNib("FinalScoreView", atIndex: 0, aClass: type(of: self),parent:self) as? UIView
         self.view.frame = frame
-        self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         self.view.isHidden = true
         finalScoreTable.register(UINib(nibName: "FinalScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "scoreCell")
 //        finalScoreTable.delegate = self
@@ -69,7 +69,7 @@ class FinalScoreView: UIView,UITableViewDelegate,UITableViewDataSource {
         
     self.view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
     
-    UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: { () -> Void in
+    UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.beginFromCurrentState, animations: { () -> Void in
         self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }, completion: nil)
         

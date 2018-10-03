@@ -92,10 +92,10 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
             let controller = storyboard!.instantiateViewController(withIdentifier: "multiPeerView") as! MultipeerViewController
             controller.dotNo = noOfDots!
             controller.mpDelegate = self
-            addChildViewController(controller)
+            addChild(controller)
             controller.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.size.width, height: self.view.frame.size.height)
             self.view.addSubview(controller.view)
-            controller.didMove(toParentViewController: self)
+            controller.didMove(toParent: self)
         }
         else
         {
@@ -567,8 +567,8 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                 
                 if (j != noOfDots!-1)
                 {
-                    buttonX = UIButton(type: UIButtonType.custom)
-                    buttonX.addTarget(self, action: #selector(MainGameViewController.sendButtonAction(_:)), for: UIControlEvents.touchUpInside)
+                    buttonX = UIButton(type: UIButton.ButtonType.custom)
+                    buttonX.addTarget(self, action: #selector(MainGameViewController.sendButtonAction(_:)), for: UIControl.Event.touchUpInside)
                     buttonX.frame = CGRect(x: circleView.frame.origin.x+circleView.frame.size.width, y: y, width: 2*scaleFactor, height: scaleFactor);
                     buttonX.tag = btnTag
 //                    buttonX.backgroundColor = UIColor.greenColor()
@@ -584,8 +584,8 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
                 
                 if (i != noOfDots!-1)
                 {
-                    buttonY = UIButton(type: UIButtonType.custom)
-                    buttonY.addTarget(self, action: #selector(MainGameViewController.sendButtonAction(_:)), for: UIControlEvents.touchUpInside)
+                    buttonY = UIButton(type: UIButton.ButtonType.custom)
+                    buttonY.addTarget(self, action: #selector(MainGameViewController.sendButtonAction(_:)), for: UIControl.Event.touchUpInside)
                     buttonY.frame = CGRect(x: circleView.frame.origin.x, y: circleView.frame.origin.y+circleView.frame.size.height,width: scaleFactor,height: 2*scaleFactor);
                     buttonY.tag = btnTag
 //                    buttonY.backgroundColor = UIColor.redColor()
@@ -1071,11 +1071,11 @@ class MainGameViewController: UIViewController,UIAlertViewDelegate,MultipeerView
     
     func customizeNavBar()
     {
-        let button: UIButton = UIButton(type: UIButtonType.custom)
+        let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
         //set image for button
-        button.setImage(UIImage(named: "back_icon"), for: UIControlState())
+        button.setImage(UIImage(named: "back_icon"), for: UIControl.State())
         //add function for button
-        button.addTarget(self, action: #selector(MainGameViewController.backButtonPressed), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action: #selector(MainGameViewController.backButtonPressed), for: UIControl.Event.touchUpInside)
         //set frame
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 25)
         
@@ -1319,7 +1319,7 @@ func deletePoints(_ deleteLists:[(Int,Int)],buttonArrays:[(Int,Int)]) ->[(Int,In
         pathLayer.fillColor = nil
         pathLayer.lineWidth =  scaleFactor/2  //5*0.5*(11-CGFloat(noOfDots!))
 //        pathLayer.lineJoin = kCALineJoinBevel
-        pathLayer.lineCap = kCALineCapRound
+        pathLayer.lineCap = CAShapeLayerLineCap.round
         pathLayer.name = "lines"
         // Add layer to views layer
         dotContainerView.layer.addSublayer(pathLayer)

@@ -192,20 +192,20 @@ class CenterViewController: UIViewController {
     
     func customizeNavBar()
     {
-        let button: UIButton = UIButton(type: UIButtonType.custom)
+        let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
         //set image for button
-        button.setImage(UIImage(named: "menu_icon"), for: UIControlState())
+        button.setImage(UIImage(named: "menu_icon"), for: UIControl.State())
         //add function for button
-        button.addTarget(self, action: #selector(CenterViewController.menuButtonPressed), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action: #selector(CenterViewController.menuButtonPressed), for: UIControl.Event.touchUpInside)
         //set frame
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 25)
         
         let barButton = UIBarButtonItem(customView: button)
         
         
-        let rightButton = UIButton(type: UIButtonType.custom)
-        rightButton.setImage(UIImage(named: "doneButton"), for: UIControlState())
-        rightButton.addTarget(self, action: #selector(CenterViewController.doneButtonPressed), for: UIControlEvents.touchUpInside)
+        let rightButton = UIButton(type: UIButton.ButtonType.custom)
+        rightButton.setImage(UIImage(named: "doneButton"), for: UIControl.State())
+        rightButton.addTarget(self, action: #selector(CenterViewController.doneButtonPressed), for: UIControl.Event.touchUpInside)
         rightButton.frame = CGRect(x: 0, y: 0, width: 44, height: 25)
         
         saveButton = UIBarButtonItem(customView: rightButton)

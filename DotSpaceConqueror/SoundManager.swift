@@ -22,7 +22,7 @@ class SoundManager: NSObject, AVAudioPlayerDelegate
         let audioFileUrl = URL(fileURLWithPath: audioFilePath)
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.playback)), mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer = try AVAudioPlayer(contentsOf: audioFileUrl, fileTypeHint: nil)
             
@@ -66,3 +66,8 @@ class SoundManager: NSObject, AVAudioPlayerDelegate
 //
 //}
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
+}

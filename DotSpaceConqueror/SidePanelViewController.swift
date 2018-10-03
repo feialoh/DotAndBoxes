@@ -63,7 +63,7 @@ class SidePanelViewController: UIViewController, UIImagePickerControllerDelegate
     if Utilities.checkValueForKey(PROFILE_PIC)
     {
         let profilePic:Data = Utilities.getDefaultValue(PROFILE_PIC) as! Data
-        playerProPicBtn.setImage(UIImage(data: profilePic), for:UIControlState())
+        playerProPicBtn.setImage(UIImage(data: profilePic), for:UIControl.State())
     }
 
     
@@ -95,10 +95,13 @@ class SidePanelViewController: UIViewController, UIImagePickerControllerDelegate
     // MARK: - UIImagePickerControllerDelegate Methods
     
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let pickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             playerProPicBtn.contentMode = .scaleAspectFit
-            playerProPicBtn.setImage(pickedImage, for:UIControlState())
+            playerProPicBtn.setImage(pickedImage, for:UIControl.State())
             
             let myImageName = "profilepic.png"
             let imagePath = fileInDocumentsDirectory(myImageName)
@@ -111,7 +114,7 @@ class SidePanelViewController: UIViewController, UIImagePickerControllerDelegate
     
     func saveImage (_ image: UIImage, path: String ) -> Bool{
         
-        let pngImageData = UIImagePNGRepresentation(image)
+        let pngImageData = image.pngData()
         //let jpgImageData = UIImageJPEGRepresentation(image, 1.0)   // if you want to save as JPEG
         let result = (try? pngImageData!.write(to: URL(fileURLWithPath: path), options: [.atomic])) != nil
         Utilities.storeDataToDefaults(PROFILE_PIC, data: pngImageData! as AnyObject)
@@ -178,4 +181,14 @@ class MenuCell: UITableViewCell {
     imageNameLabel.text = menuItems.title
   }
   
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

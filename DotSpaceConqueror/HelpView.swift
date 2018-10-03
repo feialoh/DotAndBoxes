@@ -37,7 +37,7 @@ class HelpView: UIView {
         self.valueStoreKey = type
         self.view = Utilities.loadViewFromNib("HelpView", atIndex: 0, aClass: Swift.type(of: self),parent:self) as? UIView
         self.view.frame = frame
-        self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         initializeContent()
         addSubview(self.view)
         

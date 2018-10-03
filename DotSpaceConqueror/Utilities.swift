@@ -121,13 +121,13 @@ class Utilities{
             appImageView.translatesAutoresizingMaskIntoConstraints = false
             constraints = NSLayoutConstraint.constraints(
                 withVisualFormat: "|[appImageView]-15-[appNameLabel]|",
-                options: NSLayoutFormatOptions.alignAllCenterY, metrics: nil, views: viewsDict)
+                options: NSLayoutConstraint.FormatOptions.alignAllCenterY, metrics: nil, views: viewsDict)
                 
             titleView.addConstraints(constraints)
             
             constraints = NSLayoutConstraint.constraints(
                 withVisualFormat: "V:|[appImageView]|",
-                options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDict)
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewsDict)
             
             titleView.addConstraints(constraints)
             
@@ -139,13 +139,13 @@ class Utilities{
             
             constraints = NSLayoutConstraint.constraints(
                 withVisualFormat: "|[appNameLabel]|",
-                options: NSLayoutFormatOptions.alignAllTop, metrics: nil, views: viewsDict)
+                options: NSLayoutConstraint.FormatOptions.alignAllTop, metrics: nil, views: viewsDict)
             
             titleView.addConstraints(constraints)
             
             constraints = NSLayoutConstraint.constraints(
                 withVisualFormat:"V:|[appNameLabel]|",
-                options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDict)
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewsDict)
             
             titleView.addConstraints(constraints)
             
@@ -174,7 +174,7 @@ class Utilities{
     class func adjustTurnLabel(_ fontSize:CGFloat, myLabel:UILabel)
     {
         
-    let myStringSize: CGSize = myLabel.text!.size(withAttributes: [NSAttributedStringKey.font: Utilities.myFontWithSize(fontSize)])
+    let myStringSize: CGSize = myLabel.text!.size(withAttributes: [NSAttributedString.Key.font: Utilities.myFontWithSize(fontSize)])
     myLabel.frame = CGRect(x: (UIScreen.main.bounds.size.width-myStringSize.width)/2,y: NAVBAR_HEIGHT+myStringSize.height+MARGIN,width: 2*myStringSize.width , height: myStringSize.height);
     }
     
@@ -244,9 +244,9 @@ class Utilities{
     class func showAlertViewMessageAndTitle(_ message:String, title:String, delegate:Any?, cancelButtonTitle:String) -> UIAlertController
     {
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
-        let okAction = UIAlertAction(title: cancelButtonTitle, style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: cancelButtonTitle, style: UIAlertAction.Style.default) {
             (result : UIAlertAction) -> Void in
         }
         alertController.addAction(okAction)
@@ -266,7 +266,7 @@ class Utilities{
         strLabel.font = Utilities.myFontWithSize(FONT_SIZE)
         strLabel.resizeLabelToFit(FONT_SIZE)
         
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+        activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.white)
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         activityIndicator.startAnimating()
         
@@ -296,7 +296,7 @@ extension UILabel {
     func resizeLabelToFit(_ fontSize: CGFloat) {
         
         let labelString:NSString = self.text! as NSString
-        let myStringSize:CGSize = labelString.size(withAttributes: [NSAttributedStringKey.font:Utilities.myFontWithSize(fontSize)])
+        let myStringSize:CGSize = labelString.size(withAttributes: [NSAttributedString.Key.font:Utilities.myFontWithSize(fontSize)])
         
         self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: myStringSize.width, height: myStringSize.height)
 

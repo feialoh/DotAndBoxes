@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var mpcManager: MPCManager!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
         presentViewController()
@@ -52,8 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "top_bar"), for: UIBarMetrics.default)
         
-        UINavigationBar().titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotSoStoutDeco", size: 20)!,
-                                                  NSAttributedStringKey.foregroundColor:UIColor.white];
+        UINavigationBar().titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "NotSoStoutDeco", size: 20)!,
+                                                  NSAttributedString.Key.foregroundColor:UIColor.white];
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //Handle universal links here
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
-                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         
         
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {

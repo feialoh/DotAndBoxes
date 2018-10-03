@@ -41,7 +41,7 @@ class ChooseDotAndPlayers: UIView {
         self.valueStoreKey = type
         self.view = Utilities.loadViewFromNib("ChooseDotsAndPlayers", atIndex: 0, aClass: Swift.type(of: self),parent:self) as? UIView
         self.view.frame = frame
-        self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         
         topMargin.constant = IS_IPAD ? 75:50
         
@@ -87,16 +87,16 @@ class ChooseDotAndPlayers: UIView {
         {
             for _ in 0 ..< rows
             {
-                dotButtons = UIButton(type: UIButtonType.custom)
-                dotButtons.addTarget(self, action: #selector(ChooseDotAndPlayers.dotButtonAction(_:)), for: UIControlEvents.touchUpInside)
+                dotButtons = UIButton(type: UIButton.ButtonType.custom)
+                dotButtons.addTarget(self, action: #selector(ChooseDotAndPlayers.dotButtonAction(_:)), for: UIControl.Event.touchUpInside)
                 dotButtons.frame = CGRect(x: x, y: y, width: btnSize, height: btnSize)
                 dotButtons.layer.cornerRadius = dotButtons.frame.height/2
                 dotButtons.layer.borderWidth = dotButtons.frame.height/10
                 dotButtons.layer.borderColor = Utilities.ColorCodeRGB(0x616161).cgColor
                 dotButtons.tag = dotBtnTag
-                dotButtons.setTitle(String(dotBtnTag), for: UIControlState())
-                dotButtons.setTitleColor(Utilities.ColorCodeRGB(0x616161), for: UIControlState())
-                dotButtons.setTitleColor(Utilities.ColorCodeRGB(0xe65b0b), for: UIControlState.selected)
+                dotButtons.setTitle(String(dotBtnTag), for: UIControl.State())
+                dotButtons.setTitleColor(Utilities.ColorCodeRGB(0x616161), for: UIControl.State())
+                dotButtons.setTitleColor(Utilities.ColorCodeRGB(0xe65b0b), for: UIControl.State.selected)
                 dotButtons.titleLabel?.font = UIFont(name: "NotSoStoutDeco", size: dotButtons.frame.height/2)!
                 containerView.addSubview(dotButtons)
                 dotBtnTag += 1

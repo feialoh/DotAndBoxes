@@ -51,8 +51,8 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
         
         Utilities.print("NO of dots:\(dotNo)")
         
-        let multipeerAlert = UIAlertController(title: "Host or Join?", message: "Do you wish to host a new game or join an existing one?", preferredStyle: UIAlertControllerStyle.alert)
-        let Host = UIAlertAction(title: "Host", style: UIAlertActionStyle.default) {
+        let multipeerAlert = UIAlertController(title: "Host or Join?", message: "Do you wish to host a new game or join an existing one?", preferredStyle: UIAlertController.Style.alert)
+        let Host = UIAlertAction(title: "Host", style: UIAlertAction.Style.default) {
             (result : UIAlertAction) -> Void in
             
             self.userType = "Host"
@@ -64,7 +64,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
         }
         
         
-        let okAction = UIAlertAction(title: "Join", style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: "Join", style: UIAlertAction.Style.default) {
             (result : UIAlertAction) -> Void in
             
             self.userType = "Guest"
@@ -124,7 +124,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     // MARK: Button Action method implementation
     
     @IBAction func startStopAdvertising(_ sender: AnyObject) {
-            let actionSheet = UIAlertController(title: "", message: "Change Visibility", preferredStyle: UIAlertControllerStyle.actionSheet)
+            let actionSheet = UIAlertController(title: "", message: "Change Visibility", preferredStyle: UIAlertController.Style.actionSheet)
             
             var actionTitle: String
             if isAdvertising == true {
@@ -134,7 +134,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
                 actionTitle = "Make me visible to others"
             }
             
-            let visibilityAction: UIAlertAction = UIAlertAction(title: actionTitle, style: UIAlertActionStyle.default) { (alertAction) -> Void in
+            let visibilityAction: UIAlertAction = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default) { (alertAction) -> Void in
                 if self.isAdvertising == true {
                     self.appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
                 }
@@ -145,7 +145,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
                 self.isAdvertising = !self.isAdvertising
             }
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (alertAction) -> Void in
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (alertAction) -> Void in
                 
             }
             
@@ -303,11 +303,11 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
     
     func customizeNavBar()
     {
-        let button: UIButton = UIButton(type: UIButtonType.custom)
+        let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
         //set image for button
-        button.setImage(UIImage(named: "back_icon"), for: UIControlState())
+        button.setImage(UIImage(named: "back_icon"), for: UIControl.State())
         //add function for button
-        button.addTarget(self, action: #selector(MultipeerViewController.cancelGameAction(_:)), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action: #selector(MultipeerViewController.cancelGameAction(_:)), for: UIControl.Event.touchUpInside)
         //set frame
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 25)
         
@@ -340,9 +340,9 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
             OperationQueue.main.addOperation { () -> Void in
                 
                 
-                self.inviteAlert = UIAlertController(title: "Accept or Decline?", message: Utilities.filterString(fromPeer)+" wants to join your game.", preferredStyle: UIAlertControllerStyle.alert)
+                self.inviteAlert = UIAlertController(title: "Accept or Decline?", message: Utilities.filterString(fromPeer)+" wants to join your game.", preferredStyle: UIAlertController.Style.alert)
                 
-                let acceptAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) {
+                let acceptAction = UIAlertAction(title: "Accept", style: UIAlertAction.Style.default) {
                     (result : UIAlertAction) -> Void in
                     
                     Utilities.print("Accept=\(self.appDelegate.mpcManager.session.connectedPeers.count)")
@@ -361,7 +361,7 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
                 
                 // Replace UIAlertActionStyle.Default by UIAlertActionStyle.default
                 
-                let declineAction = UIAlertAction(title: "Decline", style: UIAlertActionStyle.default) {
+                let declineAction = UIAlertAction(title: "Decline", style: UIAlertAction.Style.default) {
                     (result : UIAlertAction) -> Void in
                     Utilities.print("Decline")
                     self.appDelegate.mpcManager.invitationHandler(false, self.appDelegate.mpcManager.session)
@@ -441,9 +441,9 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
             else
             {
                 
-                inviteAlert = UIAlertController(title: "Message", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                inviteAlert = UIAlertController(title: "Message", message: message, preferredStyle: UIAlertController.Style.alert)
                 
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                     (result : UIAlertAction) -> Void in
                     
                 }
@@ -495,9 +495,9 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
            
                 Utilities.print("\(peerID.displayName)-Did not connect to session: \(String(describing: self.appDelegate.mpcManager.session))")
             
-                inviteAlert = UIAlertController(title: "Message", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                inviteAlert = UIAlertController(title: "Message", message: message, preferredStyle: UIAlertController.Style.alert)
                 
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                     (result : UIAlertAction) -> Void in
                     
                 }
@@ -509,9 +509,9 @@ class MultipeerViewController:  UIViewController, UITableViewDelegate, UITableVi
             }
             else
             {
-                inviteAlert = UIAlertController(title: "Message", message: "Lost Connection with " + Utilities.filterString(peerID.displayName), preferredStyle: UIAlertControllerStyle.alert)
+                inviteAlert = UIAlertController(title: "Message", message: "Lost Connection with " + Utilities.filterString(peerID.displayName), preferredStyle: UIAlertController.Style.alert)
                 
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                     (result : UIAlertAction) -> Void in
                     
                 }
